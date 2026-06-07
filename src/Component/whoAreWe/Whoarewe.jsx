@@ -204,7 +204,7 @@ export default function Whoarewe() {
             <div
               className="Partimag"
               style={{
-                backgroundImage: "url('/image/imagMarseds.jpg')"
+                backgroundImage: "url('image/imagMarseds.jpg')"
               }}
             ></div>
           </div>

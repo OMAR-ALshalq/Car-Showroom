@@ -1,0 +1,425 @@
+.MainBoxFooter {
+  width: 100%;
+  background: var(--accent-color); /* تم التغيير: أسود فاخر */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0 0 0;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  border-top: 5px solid var(--bg-tertiary); /* تم التغيير */
+}
+
+.MainBoxFooter .ContinerFooter {
+  width: 95%;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 30px 0; /* إضافة padding */
+}
+
+.MainBoxFooter .ContinerFooter .SectionOne,
+.MainBoxFooter .ContinerFooter .SectionTow,
+.MainBoxFooter .ContinerFooter .SectionThree {
+  width: 300px;
+  margin: 20px 0 20px 0;
+}
+
+/* Start SectionOne */
+.MainBoxFooter .ContinerFooter .SectionOne .TextSectionOne h2 {
+  color: var(--accent-text); /* تم التغيير: نص أبيض */
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.MainBoxFooter .ContinerFooter .SectionOne p {
+  width: 250px;
+  margin: 20px 0 0 0;
+  color: var(--text-secondary); /* تم التغيير: نص ثانوي */
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.MainBoxFooter .ContinerFooter .SectionOne .LinkSocialMedia {
+  display: flex;
+  width: 150px;
+  gap: 10px;
+  margin: 15px 0 0 0;
+}
+
+.MainBoxFooter .ContinerFooter .SectionOne .LinkSocialMedia a {
+  text-decoration: none;
+  color: var(--accent-text); /* تم التغيير: نص أبيض */
+  font-size: 18px;
+}
+
+.MainBoxFooter .ContinerFooter .SectionOne .LinkSocialMedia .IconSocialMedia {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1); /* تم التغيير: شفافية */
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.15); /* حد شفاف */
+}
+
+.MainBoxFooter
+  .ContinerFooter
+  .SectionOne
+  .LinkSocialMedia
+  .IconSocialMedia:hover {
+  transform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  -o-transform: translateY(-5px);
+  background: var(--accent-text); /* تم التغيير: خلفية بيضاء */
+  color: var(--accent-color); /* تم التغيير: أيقونة سوداء */
+  border-color: var(--accent-text);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+/* End SectionOne */
+
+/* Start SectionTow */
+.MainBoxFooter .ContinerFooter .SectionTow h2 {
+  color: var(--accent-text); /* تم التغيير */
+  margin: -7px 0 15px 0;
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* خط تحت العنوان */
+.MainBoxFooter .ContinerFooter .SectionTow h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--accent-text);
+  opacity: 0.5;
+}
+
+.MainBoxFooter .ContinerFooter .SectionTow .LinkSectionTow ul {
+  list-style-type: none; /* تم التغيير: إزالة المربعات */
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.MainBoxFooter .ContinerFooter .SectionTow .LinkSectionTow ul li {
+  padding: 2px 0;
+}
+
+.MainBoxFooter .ContinerFooter .SectionTow .LinkSectionTow ul li a {
+  text-decoration: none;
+  color: var(--text-secondary); /* تم التغيير */
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  display: inline-block;
+  font-size: 15px;
+  margin:  0 -15px 0 0;
+}
+
+.MainBoxFooter .ContinerFooter .SectionTow .LinkSectionTow ul li a::before {
+  content: "←"; /* إضافة سهم قبل الرابط */
+  margin-left: 8px;
+  opacity: 0;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+.MainBoxFooter .ContinerFooter .SectionTow .LinkSectionTow ul li a:hover {
+  color: var(--accent-text); /* تم التغيير */
+  transform: translateX(-5px);
+  -webkit-transform: translateX(-5px);
+  -moz-transform: translateX(-5px);
+  -ms-transform: translateX(-5px);
+  -o-transform: translateX(-5px);
+}
+
+.MainBoxFooter .ContinerFooter .SectionTow .LinkSectionTow ul li a:hover::before {
+  opacity: 1;
+}
+/* End SectionTow */
+
+/* Start SectionThree */
+.MainBoxFooter .ContinerFooter .SectionThree {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.MainBoxFooter .ContinerFooter .SectionThree h2 {
+  color: var(--accent-text); /* تم التغيير */
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* خط تحت العنوان */
+.MainBoxFooter .ContinerFooter .SectionThree h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--accent-text);
+  opacity: 0.5;
+}
+
+.MainBoxFooter .ContinerFooter .SectionThree .PartOne,
+.MainBoxFooter .ContinerFooter .SectionThree .PartTow,
+.MainBoxFooter .ContinerFooter .SectionThree .PartThree {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  padding: 5px 0;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  border-radius: 5px;
+}
+
+.MainBoxFooter .ContinerFooter .SectionThree .PartOne:hover,
+.MainBoxFooter .ContinerFooter .SectionThree .PartTow:hover,
+.MainBoxFooter .ContinerFooter .SectionThree .PartThree:hover {
+  transform: translateX(-5px);
+  -webkit-transform: translateX(-5px);
+  -moz-transform: translateX(-5px);
+  -ms-transform: translateX(-5px);
+  -o-transform: translateX(-5px);
+}
+
+.MainBoxFooter .ContinerFooter .SectionThree .PartOne .IconPartOne,
+.MainBoxFooter .ContinerFooter .SectionThree .PartTow .IconPartTow,
+.MainBoxFooter .ContinerFooter .SectionThree .PartThree .IconPartThree {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1); /* تم التغيير: شفافية */
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  font-size: 18px;
+  color: var(--accent-text); /* تم التغيير */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.MainBoxFooter .ContinerFooter .SectionThree .PartOne .TextPartOne h4,
+.MainBoxFooter .ContinerFooter .SectionThree .PartTow .TextPartTow h4,
+.MainBoxFooter .ContinerFooter .SectionThree .PartThree .TextPartThree h4 {
+  color: var(--accent-text); /* تم التغيير */
+  margin: -3px 0 3px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.MainBoxFooter .ContinerFooter .SectionThree .PartOne .TextPartOne p,
+.MainBoxFooter .ContinerFooter .SectionThree .PartTow .TextPartTow p,
+.MainBoxFooter .ContinerFooter .SectionThree .PartThree .TextPartThree p {
+  color: var(--text-secondary); /* تم التغيير */
+  font-size: 13px;
+  line-height: 1.5;
+}
+/* End SectionThree */
+
+/* Start CopyRight */
+.MainBoxFooter .CopyRight {
+  width: 81%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.15); /* تم التغيير: شفافية */
+  padding: 15px 0;
+}
+
+.MainBoxFooter .CopyRight .TextRight {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.MainBoxFooter .CopyRight .TextRight,
+.MainBoxFooter .CopyRight .TextCaenter,
+.MainBoxFooter .CopyRight .TextLeft {
+  width: 350px;
+}
+
+.MainBoxFooter .CopyRight .TextRight h3 {
+  font-weight: 100;
+  font-size: 18px;
+  color: var(--text-secondary); /* تم التغيير */
+}
+
+.MainBoxFooter .CopyRight .TextRight h5,
+.MainBoxFooter .CopyRight .TextLeft h5, 
+.MainBoxFooter .CopyRight .TextCaenter h5 {
+  color: var(--accent-text); /* تم التغيير */
+  font-size: 13px;
+  font-weight: 400;
+}
+
+
+
+.MainBoxFooter .CopyRight .TextLeft {
+  display: flex;
+  justify-content: end;
+}
+
+.MainBoxFooter .CopyRight .TextCaenter{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.MainBoxFooter .CopyRight .TextCaenter a {
+  text-decoration: none;
+  color: var(--accent-text);
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}
+/* End CopyRight */
+
+/* Start Media */
+@media (max-width: 1115px) {
+  .MainBoxFooter .CopyRight {
+    width: 90%;
+  }
+  .MainBoxFooter .CopyRight .TextRight,
+  .MainBoxFooter .CopyRight .TextCaenter,
+  .MainBoxFooter .CopyRight .TextLeft {
+    width: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .MainBoxFooter .ContinerFooter {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .MainBoxFooter .ContinerFooter .SectionOne,
+  .MainBoxFooter .ContinerFooter .SectionTow,
+  .MainBoxFooter .ContinerFooter .SectionThree {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .MainBoxFooter .ContinerFooter .SectionOne p {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .MainBoxFooter .ContinerFooter .SectionOne .LinkSocialMedia {
+    justify-content: center;
+  }
+
+  .MainBoxFooter .ContinerFooter .SectionTow h2::after,
+  .MainBoxFooter .ContinerFooter .SectionThree h2::after {
+    right: 50%;
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
+  }
+
+  .MainBoxFooter .ContinerFooter .SectionTow .LinkSectionTow ul {
+    align-items: center;
+  }
+
+  .MainBoxFooter .ContinerFooter .SectionThree .PartOne,
+  .MainBoxFooter .ContinerFooter .SectionThree .PartTow,
+  .MainBoxFooter .ContinerFooter .SectionThree .PartThree {
+    justify-content: start;
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .MainBoxFooter .CopyRight {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .MainBoxFooter .ContinerFooter .SectionOne,
+  .MainBoxFooter .ContinerFooter .SectionTow,
+  .MainBoxFooter .ContinerFooter .SectionThree {
+    width: 100%;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+  .MainBoxFooter .ContinerFooter {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  .MainBoxFooter .CopyRight {
+    width: 90%;
+    flex-direction: column;
+    height: auto;
+    gap: 8px;
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  .MainBoxFooter .CopyRight .TextRight,
+  .MainBoxFooter .CopyRight .TextLeft {
+    justify-content: center;
+  }
+
+  .MainBoxFooter .ContinerFooter .SectionOne .TextSectionOne h2 {
+    font-size: 24px;
+  }
+
+  .MainBoxFooter .ContinerFooter .SectionTow h2,
+  .MainBoxFooter .ContinerFooter .SectionThree h2 {
+    font-size: 18px;
+  }
+}
+/* End Media */

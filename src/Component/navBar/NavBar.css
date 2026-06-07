@@ -1,0 +1,317 @@
+.NavBarContiner {
+  position: fixed;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  padding: 10px 0 10px 0;
+  box-shadow: var(--shadow-md);
+  background: var(--bg-secondary); /* تم التغيير: استخدام خلفية ثانوية أنظف */
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  z-index: 900;
+  border-bottom: 1px solid var(--border-color); /* إضافة حد سفلي رفيع */
+}
+
+.NavBarContiner .BoxMainNavBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin: 0 20px 0 20px;
+}
+
+.BoxMainNavBar .IconNavBar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.BoxMainNavBar .IconNavBar h2 {
+  color: var(--text-primary);
+  font-weight: 700; /* زيادة سمك الخط لتحسين الظهور */
+  letter-spacing: -0.5px; /* تباعد أحرف أفضل */
+}
+
+.BoxMainNavBar .IconNavBar .DarkMod {
+  font-size: 22px;
+  cursor: pointer;
+  padding: 8px;
+  border: 1px solid var(--border-color); /* تم التغيير: استخدام لون الحدود */
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition); /* إضافة انتقال ناعم */
+  background: var(--bg-primary); /* إضافة خلفية خفيفة */
+}
+
+.BoxMainNavBar .IconNavBar .DarkMod:hover {
+  border-color: var(--text-primary); /* تأثير hover */
+  box-shadow: var(--shadow-sm); /* ظل خفيف عند hover */
+}
+
+.BoxMainNavBar .SearchNavBar {
+  background: var(--bg-primary); /* تم التغيير: استخدام لون خلفية مناسب */
+  width: 450px;
+  padding: 10px 5px 10px 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border-color); /* تم التفعيل: حدود مرئية */
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}
+
+.BoxMainNavBar .SearchNavBar:focus-within {
+  border-color: var(--text-primary); /* تمييز الحدود عند الكتابة */
+  box-shadow: var(--shadow-sm); /* ظل خفيف عند التركيز */
+}
+
+.BoxMainNavBar .SearchNavBar input {
+  width: 90%;
+  padding: 2px 0;
+  border: none;
+  outline: none;
+  background: transparent; /* تم التغيير: خلفية شفافة لتأخذ لون الحاوية */
+  color: var(--text-primary); /* تم التغيير: استخدام لون النص الرئيسي */
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}
+
+.NavBarContiner .BoxMainNavBar .SearchNavBar input::placeholder {
+  color: var(--text-secondary); /* تم التغيير: لون placeholder أكثر وضوحاً */
+}
+
+.BoxMainNavBar .SearchNavBar .IconSearch {
+  color: var(--text-secondary); /* تم التغيير: لون أيقونة متناسق */
+  font-size: 20px;
+}
+
+.BoxMainNavBar .TagNavBar {
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.BoxMainNavBar .TagNavBar a {
+  text-decoration: none;
+  color: var(--text-secondary); /* تم التغيير: الروابط غير النشطة بلون ثانوي */
+  position: relative;
+  padding: 5px 10px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  font-weight: 500; /* وزن خط متوسط */
+}
+
+.BoxMainNavBar .TagNavBar a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--text-primary); /* يبقى كما هو */
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.BoxMainNavBar .TagNavBar a:hover {
+  color: var(--text-primary); /* تم التغيير: لون النص الأساسي عند hover */
+  transform: translateY(-2px);
+}
+
+.BoxMainNavBar .TagNavBar a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.BoxMainNavBar .IconTagList {
+  display: none;
+  color: var(--text-primary); /* إضافة لون للأيقونة */
+}
+
+/* Start TagList */
+.tagsTow {
+  position: fixed;
+  top: 70px;
+  left: 10px;
+  width: 30%;
+  height: 300px;
+  background: var(--bg-secondary); /* تم التغيير: خلفية مناسبة */
+  overflow: hidden;
+  z-index: 1000;
+  padding: 20px 0;
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg); /* إضافة ظل عميق */
+  border: 1px solid var(--border-color); /* إضافة حدود */
+}
+
+.divClosTags {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  margin: -10px 0 0 10px;
+  padding: 0 0 10px 0;
+}
+
+.Closeicon {
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--text-secondary); /* تم التغيير: لون أيقونة متناسق */
+  transition: var(--transition);
+}
+
+.Closeicon:hover {
+  color: var(--text-primary); /* تأثير hover */
+}
+
+/* أنميشن الفتح */
+.animateShow {
+  animation: ShowTags 1s ease forwards;
+  -webkit-animation: ShowTags 1s ease forwards;
+}
+
+/* أنميشن الإغلاق */
+.animateHide {
+  animation: HiddinTags 1s ease forwards;
+  -webkit-animation: HiddinTags 1s ease forwards;
+}
+
+@keyframes ShowTags {
+  from {
+    transform: translateX(-230px);
+    -webkit-transform: translateX(-230px);
+    -moz-transform: translateX(-230px);
+    -ms-transform: translateX(-230px);
+    -o-transform: translateX(-230px);
+  }
+  to {
+    transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+  }
+}
+
+@keyframes HiddinTags {
+  from {
+    transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+  }
+  to {
+    transform: translateX(-380px);
+    -webkit-transform: translateX(-380px);
+    -moz-transform: translateX(-380px);
+    -ms-transform: translateX(-380px);
+    -o-transform: translateX(-380px);
+  }
+}
+
+.tagsTow .ListLinkTags {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tagsTow .ListLinkTags a {
+  text-decoration: none;
+  color: var(--text-secondary); /* تم التغيير: لون نص ثانوي */
+  padding: 0 10px 5px 0;
+  width: 100%;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  border-bottom: 1px solid var(--border-color); /* تم التغيير: استخدام لون الحدود */
+}
+
+.tagsTow .ListLinkTags a:hover {
+  padding: 0 15px 5px 0;
+  color: var(--text-primary); /* تم التغيير: لون النص الأساسي عند hover */
+  border-bottom-color: var(--text-primary); /* تمييز الحدود عند hover */
+}
+/* End TagList */
+
+/* Start media */
+
+@media (max-width: 1115px) {
+  .BoxMainNavBar .IconTagList {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    color: var(--text-primary);
+    cursor: pointer;
+  }
+  .BoxMainNavBar .TagNavBar {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .NavBarContiner {
+    height: 40px;
+  }
+
+  .NavBarContiner .BoxMainNavBar .IconNavBar h2 {
+    font-size: 18px;
+  }
+
+  .NavBarContiner .BoxMainNavBar .DarkMod {
+    font-size: 15px;
+    padding: 5px;
+  }
+
+  .NavBarContiner .BoxMainNavBar .SearchNavBar {
+    width: 350px;
+    padding: 5px 5px;
+  }
+  .NavBarContiner .BoxMainNavBar .IconTagList {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .NavBarContiner .BoxMainNavBar .IconNavBar h2 {
+    /* background: red; */
+    font-size: 15px;
+  }
+  .BoxMainNavBar .IconNavBar {
+    gap: 10px;
+  }
+  .NavBarContiner .BoxMainNavBar .SearchNavBar {
+    width: 150px;
+    padding: 5px 5px;
+  }
+  .tagsTow {
+    width: 50%;
+  }
+}
+/* end media */

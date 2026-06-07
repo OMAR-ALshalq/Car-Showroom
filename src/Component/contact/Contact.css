@@ -1,0 +1,516 @@
+.MainBoxConatct {
+  margin: 70px 0 0 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: var(--bg-primary);
+  min-height: 100vh;
+}
+
+.MainBoxConatct .ContinerContact {
+  width: 85%;
+}
+
+/* Start Title */
+.ContinerContact .TitileConatct {
+  padding: 40px 0 30px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 10px;
+}
+
+.ContinerContact .TitileConatct h3 {
+  color: var(--text-primary);
+  font-size: 40px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.ContinerContact .TitileConatct p {
+  color: var(--text-secondary);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+/* End Title */
+
+/* Start BoxConatcts */
+.ContinerContact .BoxConatcts {
+  margin: 40px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.ContinerContact .BoxConatcts .Address,
+.ContinerContact .BoxConatcts .FormEmail {
+  width: 48%;
+  min-height: 500px;
+}
+/* End BoxConatcts */
+
+/* Start Address */
+.ContinerContact .BoxConatcts .Address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  box-shadow: var(--shadow-md);
+  padding: 10px 0 30px;
+  transition: var(--transition);
+}
+
+.ContinerContact .BoxConatcts .Address:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.ContinerContact .BoxConatcts .Address .TitleAddress {
+  width: 85%;
+  padding: 20px 0 15px;
+  border-bottom: 2px solid var(--accent-color);
+  text-align: center;
+}
+
+.BoxConatcts .Address .TitleAddress h3 {
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.Address .BoxAddress {
+  width: 85%;
+  margin: 25px 0 0 0;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: var(--bg-primary);
+  box-shadow: var(--shadow-sm);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.BoxAddress .Phone,
+.BoxAddress .Email,
+.BoxAddress .Location {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 10px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  cursor: pointer;
+  border-radius: 8px;
+  border-bottom: 1px solid transparent;
+}
+
+.BoxAddress .Phone:hover,
+.BoxAddress .Email:hover,
+.BoxAddress .Location:hover {
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--accent-color);
+  transform: translateX(-5px);
+}
+
+.BoxAddress .Phone .IconPhone,
+.BoxAddress .Email .IconEmail,
+.BoxAddress .Location .IconLocation {
+  padding: 12px;
+  background: var(--accent-color);
+  font-size: 20px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  color: var(--accent-text);
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.BoxAddress .Phone:hover .IconPhone,
+.BoxAddress .Email:hover .IconEmail,
+.BoxAddress .Location:hover .IconLocation {
+  transform: scale(1.05);
+}
+
+.BoxAddress .Phone .TextPhone h5,
+.BoxAddress .Email .TextEmail h5,
+.BoxAddress .Location .TextLocation h5 {
+  color: var(--text-primary);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.BoxAddress .Phone .TextPhone a,
+.BoxAddress .Email .TextEmail a,
+.BoxAddress .Location .TextLocation a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.BoxAddress .Phone .TextPhone a:hover,
+.BoxAddress .Email .TextEmail a:hover,
+.BoxAddress .Location .TextLocation a:hover {
+  color: var(--accent-color);
+}
+
+/* Social */
+.Address .BoxSocial {
+  width: 85%;
+  margin: 25px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.Address .BoxSocial h4 {
+  color: var(--text-primary);
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.Address .BoxSocial .BoxUrlSocial {
+  display: flex;
+  gap: 12px;
+}
+
+.Address .BoxSocial .BoxUrlSocial a {
+  font-size: 20px;
+  padding: 12px 14px;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  color: var(--accent-color);
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.Address .BoxSocial .BoxUrlSocial a:hover {
+  background: var(--accent-color);
+  color: var(--accent-text);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+/* End Address */
+
+/* Start FormEmail */
+.BoxConatcts .FormEmail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.BoxConatcts .FormEmail:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.BoxConatcts .FormEmail .BoxMessage {
+  width: 82%;
+  min-height: 400px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.FormEmail .BoxMessage .TitleBoxMessage {
+  /* border-bottom: 2px solid var(--accent-color); */
+  padding: 0 0 12px 0;
+  text-align: center;
+}
+
+.FormEmail .BoxMessage .TitleBoxMessage h4 {
+  color: var(--text-primary);
+  font-size: 22px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.FormEmail .BoxMessage .TitleBoxMessage p {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.FormEmail .BoxMessage form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px 10px 0;
+  min-height: 270px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  background: var(--bg-primary);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.FormEmail .BoxMessage label {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: -5px;
+}
+
+.FormEmail .BoxMessage form .NameUser,
+.FormEmail .BoxMessage form .EmailUser {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.FormEmail .BoxMessage form .NameUser input,
+.FormEmail .BoxMessage form .EmailUser input {
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  outline: none;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.FormEmail .BoxMessage form .NameUser input:focus,
+.FormEmail .BoxMessage form .EmailUser input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .FormEmail .BoxMessage form .NameUser input:focus,
+[data-theme="dark"] .FormEmail .BoxMessage form .EmailUser input:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+}
+
+.FormEmail .BoxMessage form .TextMessag {
+  width: 100%;
+}
+
+.FormEmail .BoxMessage form .TextMessag textarea {
+  width: 94%;
+  padding: 12px;
+  height: 60px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  transition: var(--transition);
+}
+
+.FormEmail .BoxMessage form .TextMessag textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .FormEmail .BoxMessage form .TextMessag textarea:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+}
+
+.FormEmail .BoxMessage form .TextMessag textarea::placeholder {
+  color: var(--text-secondary);
+  font-family: inherit;
+}
+
+.FormEmail .BoxMessage form button {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 5px 0;
+  margin: 0px 0 7px 0;
+  outline: none;
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  color: var(--accent-text);
+  background: var(--accent-color);
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  letter-spacing: 1px;
+}
+
+.FormEmail .BoxMessage form button:hover {
+  color: var(--accent-color);
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+/* End FormEmail */
+
+/* Start MainLocation */
+.ContinerContact .MainLocation {
+  margin: 80px 0 50px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.ContinerContact .MainLocation .TextLocation,
+.ContinerContact .MainLocation .MapLocation {
+  width: 48%;
+}
+
+.ContinerContact .MainLocation .TextLocation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+.ContinerContact .MainLocation .TextLocation h4 {
+  color: var(--text-primary);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.ContinerContact .MainLocation .TextLocation h4:first-child {
+  color: var(--accent-color);
+}
+
+.ContinerContact .MainLocation .TextLocation p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.ContinerContact .MainLocation .TextLocation a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  color: var(--accent-text);
+  background: var(--accent-color);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  width: fit-content;
+  border: 2px solid var(--accent-color);
+}
+
+.ContinerContact .MainLocation .TextLocation a:hover {
+  gap: 15px;
+  background: transparent;
+  color: var(--accent-color);
+  box-shadow: var(--shadow-md);
+}
+
+.ContinerContact .MainLocation .MapLocation iframe {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+}
+/* End MainLocation */
+
+/* Start Media */
+@media (max-width: 1024px) {
+  .ContinerContact .BoxConatcts {
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+  }
+
+  .ContinerContact .BoxConatcts .Address,
+  .ContinerContact .BoxConatcts .FormEmail {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .ContinerContact .MainLocation {
+    margin: 60px 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .ContinerContact .MainLocation .TextLocation,
+  .ContinerContact .MainLocation .MapLocation {
+    width: 100%;
+  }
+
+  .FormEmail .BoxMessage form .TextMessag textarea {
+    width: 95%;
+  }
+}
+
+@media (max-width: 600px) {
+  .ContinerContact .TitileConatct h3 {
+    font-size: 28px;
+  }
+
+  .ContinerContact .TitileConatct p {
+    font-size: 15px;
+  }
+
+  .FormEmail .BoxMessage form .TextMessag textarea {
+    width: 92%;
+  }
+
+  .ContinerContact .MainLocation .TextLocation h4 {
+    font-size: 18px;
+  }
+
+  .Address .BoxSocial .BoxUrlSocial {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+/* End Media */  

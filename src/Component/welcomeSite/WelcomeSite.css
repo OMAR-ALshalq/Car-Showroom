@@ -1,0 +1,178 @@
+/* ============================================
+   Welcome Site - شاشة ترحيبية
+   ============================================ */
+.welcome-site {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-primary, #f8f9fa);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.welcome-site.fade-out {
+  animation: fadeOutScale 0.8s ease-in forwards;
+}
+
+/* خلفية بدوائر */
+.welcome-site-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.04;
+}
+
+.c1 {
+  width: 400px;
+  height: 400px;
+  background: var(--text-primary, #212529);
+  top: -100px;
+  left: -100px;
+  animation: float1 10s ease-in-out infinite;
+}
+
+.c2 {
+  width: 300px;
+  height: 300px;
+  background: var(--text-primary, #212529);
+  bottom: -80px;
+  right: -60px;
+  animation: float2 12s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, 20px); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-20px, -15px); }
+}
+
+/* المحتوى */
+.welcome-site-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* شعار السيارة */
+/* شعار السيارة */
+/* شعار السيارة */
+.logo-icon {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--text-primary);
+  border-radius: 50%;
+  animation: logoZoom 0.8s ease-out;
+  overflow: hidden;
+}
+
+.car-svg {
+  width: 65px;
+  height: 65px;
+  color: var(--text-primary);
+}
+
+/* إجبار SVG على استخدام اللون الصحيح في كلا الوضعين */
+.car-svg path {
+  fill: var(--text-primary) !important;
+}
+
+.car-svg g path {
+  fill: var(--text-primary) !important;
+}
+
+@keyframes logoZoom {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* اسم العلامة */
+.welcome-site-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  animation: slideUp 0.8s ease-out 0.3s both;
+}
+
+.welcome-site-brand span:first-child {
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: 10px;
+  color: var(--text-primary, #212529);
+}
+
+.welcome-site-brand span:last-child {
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 14px;
+  color: var(--text-secondary, #6c757d);
+}
+
+/* النص الفرعي */
+.welcome-site-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary, #6c757d);
+  letter-spacing: 1px;
+  animation: slideUp 0.8s ease-out 0.6s both;
+}
+
+/* شريط التحميل */
+.welcome-site-progress {
+  width: 160px;
+  height: 2px;
+  background: var(--border-color, #dee2e6);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--text-primary, #212529);
+  border-radius: 2px;
+  animation: progressFill 2.3s ease-in-out forwards;
+}
+
+/* حركات */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOutScale {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(1.05); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+  to { width: 100%; }
+}

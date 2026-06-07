@@ -1,0 +1,103 @@
+/* ============================================
+   أزرار عائمة - منفصلة
+   ============================================ */
+
+/* ✅ زر واتساب - أسفل اليسار */
+.whatsapp-btn {
+  position: fixed;
+  top: 450px;
+  left: 25px;
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  background: #25d366;
+  color: white;
+  text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ✅ حلقة نبض */
+.pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid #25d366;
+  animation: pulseRing 2s ease-out infinite;
+  opacity: 0;
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* ✅ إخفاء زر واتساب */
+.whatsapp-btn.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+/* ✅ زر العودة للأعلى - أسفل اليمين */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  background: var(--text-secondary);
+  color: var(--accent-text);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.scroll-top-btn:hover {
+  transform: scale(1.1) translateY(0);
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ✅ موبايل */
+@media (max-width: 600px) {
+  .whatsapp-btn,
+  .scroll-top-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    bottom: 15px;
+  }
+  .whatsapp-btn {
+    top: 700px;
+  }
+  .whatsapp-btn { left: 15px; }
+  .scroll-top-btn { right: 15px; }
+}

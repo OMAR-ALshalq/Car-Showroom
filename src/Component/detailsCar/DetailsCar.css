@@ -1,0 +1,808 @@
+.MainBoxdetails .detailsCar {
+  margin: 70px 0 0 0;
+  background: var(--bg-primary); /* إضافة خلفية */
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* حالة التحميل */
+.loading-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: var(--text-primary);
+  font-size: 20px;
+}
+
+/* Start BoxAddressPage */
+.MainBoxdetails .detailsCar .BoxAddressPage {
+  width: 100%;
+  height: 100px;
+  background: var(--accent-color); /* تم التغيير: شريط أسود فاخر */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.MainBoxdetails .detailsCar .BoxAddressPage h3:nth-child(1) {
+  margin: 0 50px 0 0;
+}
+
+.MainBoxdetails .detailsCar .BoxAddressPage h3 {
+  color: var(--accent-text); /* تم التغيير: نص أبيض على شريط أسود */
+}
+
+.MainBoxdetails .detailsCar .BoxAddressPage .AddressPage {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.MainBoxdetails .detailsCar .BoxAddressPage .PriceCar {
+  margin: 0 0 0 50px;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 15px;
+  align-items: center;
+}
+
+.MainBoxdetails .detailsCar .BoxAddressPage .PriceCar h3 {
+  color: var(--accent-color); /* تم التغيير: نص أسود */
+  padding: 8px 15px;
+  background: var(--accent-text); /* تم التغيير: خلفية بيضاء */
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+.MainBoxdetails .detailsCar .BoxAddressPage .PriceCar h3::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 0, 0, 0.1)
+  ); /* تم التغيير */
+  transform: skewX(-20deg);
+  animation: shine 2s infinite;
+  -webkit-animation: shine 2s infinite;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  20% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.MainBoxdetails .detailsCar .BoxAddressPage .PriceCar a {
+  font-size: 17px;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border: 2px solid var(--accent-text); /* تم التغيير: حدود بيضاء */
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: var(--accent-text); /* تم التغيير: نص أبيض */
+  background: transparent; /* تم التغيير: خلفية شفافة */
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.MainBoxdetails .detailsCar .BoxAddressPage .PriceCar a:hover {
+  background: var(--accent-text); /* تم التغيير */
+  color: var(--accent-color); /* تم التغيير */
+}
+/* End BoxAddressPage */
+
+/* Start ImagCar */
+.detailsCar .ImagCarAndInfoCar {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  margin: 20px 0;
+  min-height: 600px;
+  border-bottom: 1px solid var(--border-color); /* تم التغيير */
+  padding-bottom: 20px;
+}
+
+/* حاوية السلايدر (الصورة الكبيرة + المصغرة) */
+.ImageContainerSection {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* الصورة الكبيرة */
+.detailsCar .ImagCarAndInfoCar .ImageCar {
+  width: 100%;
+  height: 500px;
+  margin: 10px 10px 20px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--border-color); /* تم التغيير */
+  border-radius: 8px;
+  position: relative;
+  background-color: var(--bg-secondary); /* تم التغيير */
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.detailsCar .ImagCarAndInfoCar .ImageCar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* الأيقونات */
+.IconLeftImag,
+.IconRightImag {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 45px;
+  color: var(--accent-color); /* تم التغيير */
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+  background: var(--bg-secondary); /* إضافة خلفية دائرية */
+  border-radius: 50%;
+  box-shadow: var(--shadow-md);
+}
+
+.IconLeftImag:hover,
+.IconRightImag:hover {
+  color: var(--accent-text); /* تم التغيير */
+  background: var(--accent-color); /* تم التغيير */
+  transform: translateY(-50%) scale(1.1);
+}
+
+.IconLeftImag {
+  left: 15px;
+}
+.IconRightImag {
+  right: 15px;
+}
+
+/* حاوية الصور المصغرة */
+.ThumbnailsContainer {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+/* ✅ شريط السكرول بالكامل */
+.ThumbnailsContainer::-webkit-scrollbar {
+  height: 6px;
+}
+
+/* ✅ خلفية شريط السكرول */
+.ThumbnailsContainer::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+  border-radius: 3px;
+}
+
+/* ✅ مقبض السكرول */
+.ThumbnailsContainer::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: 3px;
+}
+
+/* ✅ مقبض السكرول عند hover */
+.ThumbnailsContainer::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+.ThumbnailItem {
+  width: 100px;
+  height: 70px;
+  border: 2px solid var(--border-color); /* تم التغيير */
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s;
+  flex-shrink: 0;
+}
+
+.ThumbnailItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ThumbnailItem:hover {
+  opacity: 0.8;
+  border-color: var(--text-secondary);
+}
+
+/* كلاس الصورة النشطة */
+.active-thumb {
+  border-color: var(--accent-color) !important; /* تم التغيير */
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+/* End ImagCar */
+
+/* Start InfoCar */
+.detailsCar .ImagCarAndInfoCar .InfoCar {
+  margin: 10px 0;
+  width: 30%;
+  border-right: 1px solid var(--border-color); /* تم التغيير */
+  padding-right: 10px;
+}
+
+.ImagCarAndInfoCar .InfoCar .AddressInfoCar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 10px;
+  margin: 10px 20px 0 0;
+  font-weight: 600;
+  color: var(--text-primary); /* تم التغيير */
+}
+
+.ImagCarAndInfoCar .InfoCar .AddressInfoCar p {
+  background: var(--bg-tertiary); /* إضافة خلفية للوسوم */
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.ImagCarAndInfoCar .InfoCar .detailsEngine {
+  margin: 10px 20px 0 0;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid var(--border-color); /* تم التغيير */
+}
+
+.ImagCarAndInfoCar .InfoCar .detailsEngine .transmission,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .fulType,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .horsepower,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .cylinders,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .capacityengine,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .mileagCar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.ImagCarAndInfoCar .InfoCar .detailsEngine .transmission .Icontransmission,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .fulType .IconfulType,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .horsepower .Iconhorsepower,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .cylinders .Iconcylinders,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .capacityengine .Iconcapacity,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .mileagCar .IconmileagCar {
+  color: var(--accent-color); /* تم التغيير */
+  font-size: 20px;
+}
+
+.ImagCarAndInfoCar .InfoCar .detailsEngine .transmission h4,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .fulType h4,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .horsepower h4,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .cylinders h4,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .capacityengine h4,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .capacityengine p,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .mileagCar h4 {
+  color: var(--text-primary); /* تم التغيير */
+  font-weight: 600;
+}
+
+.ImagCarAndInfoCar .InfoCar .detailsEngine .transmission h5,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .fulType h5,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .horsepower h5,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .cylinders h5,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .capacityengine h5,
+.ImagCarAndInfoCar .InfoCar .detailsEngine .mileagCar h5 {
+  color: var(--text-secondary); /* تم التغيير */
+}
+
+.ImagCarAndInfoCar .InfoCar .dicCar {
+  margin: 10px 20px 0 0;
+  max-height: 370px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.ImagCarAndInfoCar .InfoCar .dicCar h4 {
+  color: var(--text-primary); /* تم التغيير */
+  margin-bottom: 8px;
+}
+
+.ImagCarAndInfoCar .InfoCar .dicCar p {
+  color: var(--text-secondary); /* تم التغيير */
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.ImagCarAndInfoCar .InfoCar .dicCar::-webkit-scrollbar {
+  display: none;
+}
+/* End InfoCar */
+
+/* Start FeaturesCar */
+.detailsCar .FeaturesCar {
+  padding: 40px 0;
+}
+
+.detailsCar .FeaturesCar .TitleFeaturesCar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.detailsCar .FeaturesCar .TitleFeaturesCar h3 {
+  color: var(--text-primary); /* تم التغيير */
+  font-size: 40px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+/* خط تحت العنوان */
+.detailsCar .FeaturesCar .TitleFeaturesCar h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 3px;
+  background: var(--accent-color); /* تم التغيير */
+  border-radius: 2px;
+}
+
+.detailsCar .FeaturesCar .bodyFeaturesCar {
+  width: 60%;
+  margin: 20px 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 300px;
+  background: var(--bg-secondary); /* إضافة خلفية */
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.FeaturesCar .bodyFeaturesCar .tabs-header {
+  padding: 10px 0px 0px 0;
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid var(--border-color); /* تم التغيير */
+}
+
+.FeaturesCar .bodyFeaturesCar .tabs-header button {
+  font-size: 20px;
+  padding: 0 5px 10px 5px;
+  background: transparent;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  color: var(--text-secondary); /* تم التغيير */
+  outline: none;
+  font-weight: 500;
+}
+
+.tabs-header button.active {
+  color: var(--accent-color) !important; /* تم التغيير */
+  border-bottom: 2px solid var(--accent-color) !important; /* تم التغيير */
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  font-weight: 700;
+}
+
+.FeaturesCar .bodyFeaturesCar .tabs-header button:hover {
+  color: var(--accent-color); /* تم التغيير */
+  border-bottom: 2px solid var(--accent-color); /* تم التغيير */
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.FeaturesCar .bodyFeaturesCar .tabs-content .features-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+  list-style: none;
+}
+
+.FeaturesCar .bodyFeaturesCar .tabs-content ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0px;
+  margin: 0 10px 0 0;
+}
+
+.FeaturesCar .bodyFeaturesCar .tabs-content .features-grid li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  color: var(--text-primary); /* تم التغيير */
+  font-weight: 500;
+  padding: 8px 10px;
+  border-radius: 5px;
+  transition: var(--transition);
+}
+
+.FeaturesCar .bodyFeaturesCar .tabs-content .features-grid li:hover {
+  background: var(--bg-tertiary); /* تأثير hover */
+}
+
+.FeaturesCar .bodyFeaturesCar .tabs-content .features-grid li .check-icon {
+  margin: 0px 0 0 0;
+  font-size: 22px;
+  color: var(--accent-color); /* تم التغيير: أسود بدلاً من أخضر */
+  flex-shrink: 0;
+}
+
+/* End FeaturesCar */
+
+/* Start RelatedCars*/
+/* ============================================
+   قسم سيارات ذات صلة
+   ============================================ */
+.RelatedCars {
+  margin: 40px 0px 0 0px;
+  width: 100%;
+}
+
+.RelatedCars .TitleRelatedCars {
+  margin: 0 20px 20px 0;
+}
+
+.RelatedCars .TitleRelatedCars h3 {
+  color: var(--text-primary);
+  font-size: 28px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.RelatedCars .TitleRelatedCars h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 3px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+/* مجموعة تطابق */
+.related-group {
+  margin-bottom: 30px;
+}
+
+.related-group-title {
+  color: var(--text-secondary);
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 20px 10px 0;
+}
+
+.related-group-title span {
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+/* شبكة السيارات */
+.related-cars-grid {
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px; */
+  /* background: green;  */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 11px;
+  margin: 0 20px;
+}
+
+/* بطاقة سيارة صغيرة */
+.related-car-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  width: 200px;
+  /* height: 250px; */
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  position: relative;
+}
+
+.IconaddCompare {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: black;
+  padding: 5px;
+  cursor: pointer;
+  background: var(--text-secondary);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.related-car-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-color);
+}
+
+.related-car-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.related-car-info {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.related-car-info h4 {
+  color: var(--text-primary);
+  font-size: 14px;
+  margin: 0;
+}
+
+.related-car-info .related-year {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.related-car-info .related-price {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* سكيلتون */
+.related-skeleton {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 200px;
+}
+
+.related-skeleton .shimmer-img {
+  width: 100%;
+  height: 120px;
+}
+
+.related-skeleton .shimmer-info {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.related-skeleton .shimmer-title {
+  width: 80%;
+  height: 14px;
+}
+
+.related-skeleton .shimmer-subtitle {
+  width: 50%;
+  height: 12px;
+}
+
+.related-skeleton .shimmer-price {
+  width: 40%;
+  height: 16px;
+}
+
+/* لا توجد نتائج */
+.no-related {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+/* @media (max-width: 768px) {
+  .related-cars-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  .related-car-card img {
+    height: 90px;
+  }
+} */
+/* End RelatedCars*/
+
+/* Start media */
+@media (max-width: 1024px) {
+  .MainBoxdetails .detailsCar .ImagCarAndInfoCar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detailsCar .ImagCarAndInfoCar .ImageContainerSection {
+    width: 95%;
+    border-bottom: 1px solid var(--border-color); /* تم التغيير */
+    padding-bottom: 20px;
+  }
+
+  .detailsCar .ImagCarAndInfoCar .ImageCar {
+    margin: 0;
+  }
+
+  .detailsCar .ImagCarAndInfoCar .InfoCar {
+    border: none;
+    width: 100%;
+    border-right: none;
+  }
+
+  .detailsCar .FeaturesCar .bodyFeaturesCar {
+    width: 80%;
+  }
+}
+
+@media (max-width: 720px) {
+  .MainBoxdetails .detailsCar .BoxAddressPage {
+    flex-direction: column;
+    height: auto;
+    padding: 15px 0;
+    gap: 10px;
+  }
+
+  .MainBoxdetails .detailsCar .BoxAddressPage .AddressPage h3 {
+    font-size: 15px;
+    margin: 0 10px 0 0;
+  }
+
+  .MainBoxdetails .detailsCar .BoxAddressPage .AddressPage {
+    justify-content: center;
+  }
+
+  .MainBoxdetails .detailsCar .BoxAddressPage .PriceCar {
+    margin: 0 0 0px 10px;
+  }
+
+  .MainBoxdetails .detailsCar .BoxAddressPage .PriceCar h3,
+  .MainBoxdetails .detailsCar .BoxAddressPage .PriceCar a {
+    font-size: 15px;
+  }
+
+  .detailsCar .FeaturesCar {
+    /* background: green; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .detailsCar .FeaturesCar .bodyFeaturesCar {
+    width: 90%;
+    margin: 0 20px 0 20px;
+    /* background: red; */
+  }
+
+  .detailsCar .FeaturesCar .TitleFeaturesCar h3 {
+    font-size: 30px;
+  }
+
+  .FeaturesCar .bodyFeaturesCar .tabs-header button {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .IconLeftImag,
+  .IconRightImag {
+    font-size: 30px;
+  }
+  .detailsCar .FeaturesCar {
+    /* background: green; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .detailsCar .FeaturesCar .bodyFeaturesCar {
+    width: 80%;
+    margin: 0 20px 0 20px;
+    /* background: red; */
+  }
+
+  /* شبكة السيارات */
+  .related-cars-grid {
+    /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px; */
+    /* background: green; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 0 20px;
+  }
+
+  /* بطاقة سيارة صغيرة */
+  .related-car-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    width: 175px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+  }
+  .related-car-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+}
+/* End media */

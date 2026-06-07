@@ -1,0 +1,512 @@
+.MainBoxWhoarewe {
+  margin: 70px 0 0 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: var(--bg-primary); /* إضافة خلفية */
+  min-height: 100vh;
+}
+
+.MainBoxWhoarewe .ContinerWhoarewe {
+  width: 85%;
+}
+
+.ContinerWhoarewe .TitleWhoarewe {
+  margin: 50px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ContinerWhoarewe .TitleWhoarewe h3 {
+  color: var(--text-primary); /* تم التغيير */
+  font-size: 45px;
+  font-weight: 400;
+}
+
+.ContinerWhoarewe .TitleWhoarewe h3 span {
+  color: var(--accent-color); /* تم التغيير: لون مميز للكلمة المفتاحية */
+}
+
+.ContinerWhoarewe .TitleWhoarewe p {
+  text-align: center;
+  max-width: 550px;
+  color: var(--text-secondary); /* تم التغيير */
+  line-height: 1.8;
+}
+
+/* Start SectionOne */
+.ContinerWhoarewe .SectionOne {
+  margin: 80px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ContinerWhoarewe .SectionOne .TextSectionOne {
+  width: 600px;
+}
+
+.ContinerWhoarewe .SectionOne .TextSectionOne .IconSectionOne {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 17px;
+  color: var(--text-secondary); /* تم التغيير */
+  margin: 0 20px 0 0;
+}
+
+.ContinerWhoarewe .SectionOne .TextSectionOne h3 {
+  color: var(--text-primary); /* تم التغيير */
+  font-size: 25px;
+}
+
+.ContinerWhoarewe .SectionOne .TextSectionOne h3 span {
+  color: var(--accent-color); /* تم التغيير */
+}
+
+.ContinerWhoarewe .SectionOne .TextSectionOne p {
+  color: var(--text-secondary); /* تم التغيير */
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.ContinerWhoarewe .SectionOne .ImagSectionOne {
+  width: 450px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border: 1px solid var(--border-color); /* إضافة حدود */
+  box-shadow: var(--shadow-lg); /* إضافة ظل */
+}
+/* End SectionOne */
+
+/* Start SectionTow */
+.ContinerWhoarewe .SectionTow {
+  margin: 80px 0 0 0;
+}
+
+.ContinerWhoarewe .SectionTow .TitleSectionTow {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.ContinerWhoarewe .SectionTow .TitleSectionTow h3 {
+  color: var(--text-primary); /* تم التغيير */
+  font-size: 45px;
+  font-weight: 600;
+}
+
+.ContinerWhoarewe .SectionTow .TitleSectionTow h3 span {
+  color: var(--accent-color); /* تم التغيير */
+}
+
+.ContinerWhoarewe .SectionTow .CardsSectionTow {
+  margin: 50px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.ContinerWhoarewe .SectionTow .CardsSectionTow .Card {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background: var(--bg-secondary); /* إضافة خلفية */
+  padding: 25px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md); /* تم التغيير */
+  transition: var(--transition);
+}
+
+.ContinerWhoarewe .SectionTow .CardsSectionTow .Card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-color);
+}
+
+.ContinerWhoarewe .SectionTow .CardsSectionTow .Card svg {
+  width: 40px;
+  height: 35px;
+  fill: var(--accent-color); /* تم التغيير */
+  margin-bottom: 15px;
+}
+
+.ContinerWhoarewe .SectionTow .CardsSectionTow .Card h3 {
+  color: var(--text-primary); /* تم التغيير */
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.ContinerWhoarewe .SectionTow .CardsSectionTow .Card p {
+  color: var(--text-secondary); /* تم التغيير */
+  line-height: 1.7;
+}
+/* End SectionTow */
+
+/* Start SectionThree */
+.ContinerWhoarewe .SectionThree {
+  margin: 80px 0 0 0;
+}
+
+.ContinerWhoarewe .SectionThree .TitleSectionThree {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.ContinerWhoarewe .SectionThree .TitleSectionThree h3 {
+  color: var(--text-primary); /* تم التغيير */
+  font-size: 45px;
+  font-weight: 600;
+  position: relative;
+  z-index: 100;
+}
+
+.ContinerWhoarewe .SectionThree .TitleSectionThree h3::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  bottom: 10px;
+  left: 0;
+  z-index: -1; /* تم التغيير: لتكون خلف النص */
+  background: var(--accent-color); /* تم التغيير */
+  opacity: 0.3; /* إضافة شفافية */
+  border-radius: 2px;
+}
+
+.ContinerWhoarewe .SectionThree .BoxTextOne {
+  display: flex;
+  justify-content: space-between;
+  margin: 70px 0 0 0;
+  gap: 20px;
+}
+
+.ContinerWhoarewe .SectionThree .BoxTextOne .PartTextOne,
+.ContinerWhoarewe .SectionThree .BoxTextOne .PartTextTow {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border: 1px solid var(--border-color); /* تم التغيير */
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  gap: 10px;
+  background: var(--bg-secondary); /* إضافة خلفية */
+  transition: var(--transition);
+}
+
+.ContinerWhoarewe .SectionThree .BoxTextOne .PartTextOne:hover,
+.ContinerWhoarewe .SectionThree .BoxTextOne .PartTextTow:hover {
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.ContinerWhoarewe .SectionThree .BoxTextOne .PartTextOne .IconCheck,
+.ContinerWhoarewe .SectionThree .BoxTextOne .PartTextTow .IconCheck {
+  padding: 5px;
+  background: var(--accent-color); /* تم التغيير */
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  color: var(--accent-text); /* تم التغيير */
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.ContinerWhoarewe .SectionThree .BoxTextOne .PartTextOne p,
+.ContinerWhoarewe .SectionThree .BoxTextOne .PartTextTow p {
+  color: var(--text-primary); /* تم التغيير */
+}
+
+.ContinerWhoarewe .SectionThree .Boximag {
+  display: flex;
+  justify-content: center;
+  margin: 70px 0 0 0;
+}
+
+.ContinerWhoarewe .SectionThree .Boximag svg {
+  width: 250px;
+  height: 250px;
+}
+
+/* تنسيق ألوان SVG */
+.ContinerWhoarewe .SectionThree .Boximag svg circle:nth-child(1) {
+  fill: var(--bg-tertiary); /* تم التغيير */
+  transition: 0.5s;
+}
+
+.ContinerWhoarewe .SectionThree .Boximag svg circle:nth-child(2) {
+  fill: var(--bg-tertiary); /* تم التغيير */
+  stroke: var(--text-secondary); /* تم التغيير */
+}
+
+.ContinerWhoarewe .SectionThree .Boximag svg circle:nth-child(3) {
+  fill: var(--bg-secondary); /* تم التغيير */
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.ContinerWhoarewe .SectionThree .Boximag svg path {
+  stroke: var(--accent-color); /* تم التغيير */
+}
+
+.ContinerWhoarewe .SectionThree .BoxTextTow {
+  margin: 70px 0 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.ContinerWhoarewe .SectionThree .BoxTextTow .PartText {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border-color); /* تم التغيير */
+  padding: 10px 15px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background: var(--bg-secondary); /* إضافة خلفية */
+  transition: var(--transition);
+}
+
+.ContinerWhoarewe .SectionThree .BoxTextTow .PartText:hover {
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.ContinerWhoarewe .SectionThree .BoxTextTow .PartText .IconCheck {
+  padding: 5px;
+  background: var(--accent-color); /* تم التغيير */
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  color: var(--accent-text); /* تم التغيير */
+  flex-shrink: 0;
+}
+
+.ContinerWhoarewe .SectionThree .BoxTextTow .PartText p {
+  color: var(--text-primary); /* تم التغيير */
+}
+/* End SectionThree */
+
+/* Start SectionFor */
+.ContinerWhoarewe .SectionFor {
+  margin: 80px 0 0 0;
+  padding-bottom: 50px;
+}
+
+.ContinerWhoarewe .SectionFor .TitleSectionFor {
+  display: flex;
+  justify-content: start;
+}
+
+.ContinerWhoarewe .SectionFor .TitleSectionFor h3 {
+  color: var(--text-primary); /* تم التغيير */
+  font-size: 45px;
+  font-weight: 600;
+  position: relative;
+}
+
+.ContinerWhoarewe .SectionFor .TitleSectionFor h3::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  bottom: 5px;
+  left: 0;
+  background: var(--accent-color); /* تم التغيير */
+  opacity: 0.3; /* إضافة شفافية */
+  border-radius: 2px;
+}
+
+.ContinerWhoarewe .SectionFor .BoxSectionFor {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0 0 0;
+  gap: 30px;
+}
+
+.ContinerWhoarewe .SectionFor .BoxSectionFor .PartText {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.ContinerWhoarewe .SectionFor .BoxSectionFor .PartText .Card {
+  display: flex;
+  align-items: start;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.ContinerWhoarewe .SectionFor .BoxSectionFor .PartText .Card:hover {
+  background: var(--bg-secondary); /* إضافة خلفية عند hover */
+  border-color: var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.ContinerWhoarewe .SectionFor .BoxSectionFor .PartText .Card .IconText {
+  font-size: 30px;
+  color: var(--accent-color); /* تم التغيير */
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.ContinerWhoarewe .SectionFor .BoxSectionFor .PartText .Card .Text h4 {
+  color: var(--text-primary); /* تم التغيير */
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.ContinerWhoarewe .SectionFor .BoxSectionFor .PartText .Card .Text p {
+  color: var(--text-secondary); /* تم التغيير */
+  line-height: 1.7;
+}
+
+.ContinerWhoarewe .SectionFor .BoxSectionFor .Partimag {
+  width: 450px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+}
+/* End SectionFor */
+
+/* Start Media */
+@media (max-width: 1024px) {
+  .ContinerWhoarewe .TitleWhoarewe h3 {
+    font-size: 35px;
+  }
+
+  .ContinerWhoarewe .TitleWhoarewe p {
+    max-width: 450px;
+  }
+
+  .ContinerWhoarewe .SectionOne {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .ContinerWhoarewe .SectionOne .TextSectionOne {
+    width: 100%;
+  }
+
+  .ContinerWhoarewe .SectionTow .CardsSectionTow {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .ContinerWhoarewe .SectionTow .CardsSectionTow .Card {
+    width: 300px;
+  }
+
+  .ContinerWhoarewe .SectionFor .BoxSectionFor {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .ContinerWhoarewe .SectionFor .BoxSectionFor .PartText {
+    width: 100%;
+  }
+}
+
+@media (max-width: 880px) {
+  .ContinerWhoarewe .SectionTow .CardsSectionTow {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .ContinerWhoarewe .SectionTow .CardsSectionTow .Card {
+    width: 280px;
+  }
+
+  .ContinerWhoarewe .SectionThree .BoxTextOne {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .ContinerWhoarewe .SectionThree .BoxTextOne .PartTextOne,
+  .ContinerWhoarewe .SectionThree .BoxTextOne .PartTextTow {
+    width: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ContinerWhoarewe .TitleWhoarewe h3 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .ContinerWhoarewe .TitleWhoarewe p {
+    max-width: 300px;
+  }
+
+  .ContinerWhoarewe .SectionOne .TextSectionOne {
+    width: 95%;
+  }
+
+  .ContinerWhoarewe .SectionOne .ImagSectionOne {
+    width: 95%;
+    height: 200px;
+  }
+
+  .ContinerWhoarewe .SectionFor .BoxSectionFor .PartText,
+  .ContinerWhoarewe .SectionFor .BoxSectionFor .Partimag {
+    width: 95%;
+  }
+
+  .ContinerWhoarewe .SectionFor .BoxSectionFor .Partimag {
+    height: 200px;
+  }
+
+  .ContinerWhoarewe .SectionThree .BoxTextOne .PartTextOne,
+  .ContinerWhoarewe .SectionThree .BoxTextOne .PartTextTow {
+    width: 95%;
+  }
+
+  .ContinerWhoarewe .SectionTow .TitleSectionTow h3,
+  .ContinerWhoarewe .SectionThree .TitleSectionThree h3,
+  .ContinerWhoarewe .SectionFor .TitleSectionFor h3 {
+    font-size: 28px;
+  }
+}
+/* End Media */

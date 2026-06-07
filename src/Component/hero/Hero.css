@@ -1,0 +1,1268 @@
+.HeroContiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-primary);
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}
+
+/* Start SectionOne */
+.HeroContiner .SectionOne {
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70vh;
+}
+
+.SectionOne .TextAndSearch .Text h2:nth-child(1) {
+  color: var(--accent-color); /* تم التغيير: استخدام لون التأكيد */
+  font-size: 60px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.SectionOne .TextAndSearch .Text h2:nth-child(2) {
+  color: var(--text-primary); /* تم التغيير: استخدام لون النص الرئيسي */
+  font-size: 60px;
+  margin: -30px 0 0 0;
+  font-weight: 600;
+}
+
+.SectionOne .TextAndSearch .Text p {
+  color: var(--text-secondary); /* تم التغيير: استخدام لون النص الثانوي */
+  font-size: 20px;
+  max-width: 390px;
+  word-break: break-all;
+}
+
+.SectionOne .TextAndSearch .Search {
+  padding: 15px 5px;
+  margin: 25px 0 0 0;
+  width: 355px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  box-shadow: var(--shadow-lg);
+  background: var(--bg-secondary); /* تم التغيير: خلفية البطاقات */
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  position: relative;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+  border: 1px solid var(--border-color);
+}
+
+.SectionOne .TextAndSearch .Search .dropdown-container {
+  position: relative;
+  cursor: pointer;
+  min-width: 100px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+.SectionOne .TextAndSearch .Search .dropdown-container .dropdown-header {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  color: var(--text-primary); /* تم التغيير */
+}
+
+.SectionOne .TextAndSearch .Search .dropdown-container .dropdown-header p {
+  color: var(--text-primary); /* تم التغيير */
+}
+
+/* أيقونة السهم */
+.SectionOne .TextAndSearch .Search .dropdown-container .dropdown-header svg {
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.SectionOne .TextAndSearch .Search .dropdown-container .dropdown-list {
+  position: absolute;
+  top: 130%;
+  left: -45px;
+  width: 200px;
+  max-height: 200px;
+  overflow-y: scroll;
+  background-color: var(--bg-secondary); /* تم التغيير: خلفية القائمة */
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  list-style: none;
+  padding: 10px 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-md); /* إضافة ظل */
+  transition: 0.3s;
+}
+
+/* تخصيص مظهر مؤشر السكرول (Scrollbar) */
+.SectionOne
+  .TextAndSearch
+  .Search
+  .dropdown-container
+  .dropdown-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.SectionOne
+  .TextAndSearch
+  .Search
+  .dropdown-container
+  .dropdown-list::-webkit-scrollbar-track {
+  background: var(--bg-tertiary); /* تم التغيير */
+  border-radius: 5px 0 0 0;
+}
+
+.SectionOne
+  .TextAndSearch
+  .Search
+  .dropdown-container
+  .dropdown-list::-webkit-scrollbar-thumb {
+  background: var(--text-secondary); /* تم التغيير */
+  border-radius: 10px;
+}
+
+.SectionOne .TextAndSearch .Search .dropdown-container .dropdown-list li a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--text-primary); /* تم التغيير */
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.SectionOne
+  .TextAndSearch
+  .Search
+  .dropdown-container
+  .dropdown-list
+  li
+  a:hover {
+  background-color: var(--bg-tertiary); /* تم التغيير: خلفية hover */
+  color: var(--accent-color); /* تم التغيير: لون التأكيد عند hover */
+}
+
+.SectionOne .TextAndSearch .Search .SearchNew {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--accent-text); /* تم التغيير: لون النص على زر التأكيد */
+  background: var(--accent-color); /* تم التغيير: خلفية زر التأكيد */
+  padding: 2px 12px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.SectionOne .TextAndSearch .Search .SearchNew:hover {
+  opacity: 0.9;
+  box-shadow: var(--shadow-sm);
+}
+
+.SectionOne .ImageSectionOne {
+  width: 500px;
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border: 1px solid var(--border-color); /* تم التغيير */
+  box-shadow: var(--shadow-lg); /* إضافة ظل */
+}
+/* End SectionOne */
+
+/* Start SectionTow */
+.HeroContiner .SectionTow {
+  width: 85%;
+}
+
+.SectionTow .TitleSectionTow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.SectionTow .TitleSectionTow .Text h3 {
+  color: var(--text-primary); /* تم التغيير */
+  font-size: 28px;
+}
+
+.SectionTow .TitleSectionTow .Text p {
+  color: var(--text-secondary); /* تم التغيير */
+}
+
+.SectionTow .TitleSectionTow .Link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 15px;
+  background: var(--accent-color); /* تم التغيير: خلفية زر التأكيد */
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: var(--transition);
+}
+
+.SectionTow .TitleSectionTow .Link:hover {
+  opacity: 0.9;
+  box-shadow: var(--shadow-sm);
+}
+
+.SectionTow .TitleSectionTow .Link a {
+  text-decoration: none;
+  color: var(--accent-text); /* تم التغيير: نص أبيض على زر أسود */
+  font-weight: 500;
+}
+
+.SectionTow .TitleSectionTow .Link .IconLinkSectionTow {
+  color: var(--accent-text); /* تم التغيير */
+  margin: 5px 0 0 0;
+}
+
+/* Start CardCar */
+.SectionTow .NewCar {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 10px;
+  margin: 0px 0 20px 0;
+}
+
+.NewCar::-webkit-scrollbar {
+  display: none;
+}
+
+.SectionTow .SliderContainer {
+  position: relative;
+}
+
+.SectionTow .SliderContainer .Left,
+.SectionTow .SliderContainer .Right {
+  position: absolute;
+  top: 45%;
+  cursor: pointer;
+}
+
+.SectionTow .SliderContainer .Left {
+  left: -50px;
+  font-size: 50px;
+  color: var(--bg-secondary); /* تم التغيير: لون الأيقونة */
+  background: var(--accent-color); /* تم التغيير: خلفية دائرة التأكيد */
+  border: none;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: var(--transition);
+  box-shadow: var(--shadow-md);
+}
+
+.SectionTow .SliderContainer .Right {
+  right: -50px;
+  font-size: 50px;
+  color: var(--bg-secondary); /* تم التغيير */
+  background: var(--accent-color); /* تم التغيير */
+  border: none;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: var(--transition);
+  box-shadow: var(--shadow-md);
+}
+
+.SectionTow .SliderContainer .Left:hover,
+.SectionTow .SliderContainer .Right:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.SectionTow .NewCar .CardCar {
+  min-width: 270px;
+  height: 485px;
+  border: 1px solid var(--border-color); /* تم التغيير */
+  background: var(--bg-secondary); /* تم التغيير: خلفية البطاقة */
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+  -webkit-transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+  -moz-transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+  -ms-transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+  -o-transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+  position: relative;
+  box-shadow: var(--shadow-sm); /* إضافة ظل خفيف */
+}
+
+.SectionTow .NewCar .CardCar:hover {
+  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+  box-shadow: var(--shadow-lg); /* ظل أكبر عند hover */
+  border-color: var(--accent-color); /* تمييز الحدود */
+}
+
+.SectionTow .NewCar .CardCar .ImagCar {
+  width: 95%;
+  margin: 7px 5px 0 5px;
+  position: relative;
+}
+
+.SectionTow .NewCar .CardCar .ImagCar img {
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  object-fit: cover;
+  /* object-position: center 30%; */
+}
+
+.SectionTow .NewCar .CardCar .ImagCar .iconCompare {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: black;
+  padding: 5px;
+  cursor: pointer;
+  background: var(--text-secondary);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.SectionTow .NewCar .CardCar .BrandAndYear {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.SectionTow .NewCar .CardCar .BrandAndYear .Brand,
+.SectionTow .NewCar .CardCar .BrandAndYear .Year {
+  margin: 10px 10px 0 10px;
+}
+
+.SectionTow .NewCar .CardCar .BrandAndYear .Brand h4 {
+  font-size: 20px;
+  color: var(--accent-color); /* تم التغيير */
+}
+
+.SectionTow .NewCar .CardCar .BrandAndYear .Year {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-secondary); /* تم التغيير */
+}
+
+.SectionTow .NewCar .CardCar .BrandAndYear .Year .IconYearCar {
+  font-size: 20px;
+  color: var(--text-secondary); /* تم التغيير */
+}
+
+.SectionTow .NewCar .CardCar .model {
+  width: 100%;
+}
+
+.SectionTow .NewCar .CardCar .model h3 {
+  margin: 5px 10px 0 0;
+  color: var(--text-primary); /* تم التغيير */
+}
+
+.SectionTow .NewCar .CardCar .DisCar {
+  margin: 10px 0px 0 0;
+  width: 100%;
+  display: flex;
+  align-items: start;
+  gap: 5px;
+}
+
+.SectionTow .NewCar .CardCar .DisCar .IconDisCar {
+  font-size: 20px;
+  margin: 5px 0 0 0;
+  color: var(--text-secondary); /* تم التغيير */
+  width: 15%;
+}
+
+.SectionTow .NewCar .CardCar .DisCar .TextDisCar {
+  max-width: 250px;
+  text-align: right;
+  color: var(--text-secondary); /* تم التغيير */
+}
+
+.SectionTow .NewCar .CardCar hr {
+  position: absolute;
+  bottom: 115px;
+  width: 92%;
+  height: 1px; /* أنحف قليلاً */
+  border-radius: 2px;
+  border: none;
+  background: var(--border-color); /* تم التغيير */
+}
+
+.SectionTow .NewCar .CardCar .PriceAndditalsCar {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+}
+
+.SectionTow .NewCar .CardCar .PriceAndditalsCar > h3 {
+  margin: 0 10px 0 10px;
+  color: var(--text-secondary); /* تم التغيير */
+}
+
+.SectionTow .NewCar .CardCar .PriceAndditalsCar .price {
+  margin: 0 10px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--accent-color); /* تم التغيير */
+}
+
+.SectionTow .NewCar .CardCar .PriceAndditalsCar .price h3 {
+  color: var(--accent-color); /* تم التغيير */
+}
+
+.SectionTow .NewCar .CardCar .PriceAndditalsCar .ditalsCar {
+  display: flex;
+  justify-content: center;
+}
+
+.SectionTow .NewCar .CardCar .PriceAndditalsCar .ditalsCar a {
+  text-decoration: none;
+  padding: 5px 20px;
+  border-radius: 20px;
+  color: var(--accent-text); /* تم التغيير: نص أبيض */
+  background: var(--accent-color); /* تم التغيير: خلفية سوداء */
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.SectionTow .NewCar .CardCar .PriceAndditalsCar .ditalsCar a:hover {
+  opacity: 0.9;
+  box-shadow: var(--shadow-md);
+}
+/* ******************* */
+/* ============================================
+   Skeleton Loading لـ CardCar
+   ============================================ */
+.skeleton-card {
+  pointer-events: none;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-card * {
+  visibility: hidden;
+}
+
+.skeleton-card .shimmer {
+  visibility: visible;
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--bg-tertiary) 25%,
+    var(--bg-primary) 50%,
+    var(--bg-tertiary) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmerMove 1.5s infinite linear;
+  border-radius: 4px;
+}
+
+/* صورة السيارة */
+.sk-image-hero {
+  width: 100%;
+  height: 150px;
+  border-radius: 5px;
+}
+
+/* الماركة */
+.sk-brand {
+  width: 80px;
+  height: 20px;
+}
+
+/* السنة */
+.sk-year {
+  width: 50px;
+  height: 16px;
+}
+
+/* الموديل */
+.sk-model {
+  width: 120px;
+  height: 18px;
+  margin: 5px 10px 0 0;
+}
+
+/* أيقونة الوصف */
+.sk-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+/* نص الوصف */
+.sk-text {
+  width: 200px;
+  height: 14px;
+  margin-bottom: 6px;
+}
+
+.sk-text-short {
+  width: 140px;
+  height: 14px;
+}
+
+/* عنوان السعر */
+.sk-price-label {
+  width: 60px;
+  height: 14px;
+  margin: 0 10px 5px;
+}
+
+/* السعر */
+.sk-price {
+  width: 80px;
+  height: 20px;
+}
+
+/* أيقونة الحاسبة */
+.sk-calc-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+/* زر التفاصيل */
+.sk-btn {
+  width: 100px;
+  height: 32px;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+/* ✅ أنيميشن للـ Dark Mode */
+[data-theme="dark"] .shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--bg-tertiary) 25%,
+    rgba(255, 255, 255, 0.03) 50%,
+    var(--bg-tertiary) 75%
+  );
+  background-size: 200% 100%;
+}
+
+@keyframes shimmerMove {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes skeletonPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+/* ******************* */
+/* End CardCar */
+/* End SectionTow */
+
+/* Start SectionThree */
+.HeroContiner .SectionThree {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.HeroContiner .SectionThree .BoxSectionThree {
+  padding: 20px 0;
+  width: 95%;
+}
+
+.SectionThree .BoxSectionThree .TitleSectionThree {
+  text-align: center;
+}
+
+.SectionThree .BoxSectionThree .TitleSectionThree h3 {
+  color: var(--text-primary); /* تم التغيير */
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.SectionThree .BoxSectionThree .BoxCardSectionThree {
+  /* height: 400px; */ /* إزالة الارتفاع الثابت للمرونة */
+  min-height: 300px;
+}
+
+.SectionThree .BoxSectionThree .BoxCardSectionThree .CardSectionThree {
+  margin: 20px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap; /* للتجاوب مع الشاشات الصغيرة */
+  gap: 20px;
+}
+
+.SectionThree .BoxSectionThree .BoxCardSectionThree .CardSectionThree .Card {
+  padding: 20px 10px;
+  width: 250px;
+  height: 180px;
+  border: 1px solid var(--border-color); /* تم التغيير */
+  background: var(--bg-secondary); /* تم التغيير */
+  box-shadow: var(--shadow-md); /* تم التغيير */
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.SectionThree
+  .BoxSectionThree
+  .BoxCardSectionThree
+  .CardSectionThree
+  .Card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-color);
+}
+
+.CardSectionThree .Card .IconCardSectionThree {
+  font-size: 25px;
+  padding: 10px;
+  background: var(--bg-tertiary); /* تم التغيير */
+  color: var(--accent-color); /* تم التغيير */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.CardSectionThree .Card .TitleCardSectionThree h4 {
+  color: var(--text-primary); /* تم التغيير */
+  margin: 10px 0;
+}
+
+.CardSectionThree .Card .DisCardSectionThree p {
+  color: var(--text-secondary); /* تم التغيير */
+  text-align: center;
+  font-weight: 500;
+}
+/* End SectionThree */
+
+/* Start SectionFor */
+.HeroContiner .SectionFor {
+  margin: 0px 0 0 0;
+  width: 100%;
+  min-height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.HeroContiner .SectionFor .TitleSectionFor {
+  text-align: center;
+  width: 100%;
+  margin: 0 0 10px 0;
+}
+
+.HeroContiner .SectionFor .TitleSectionFor h3 {
+  color: var(--text-primary); /* تم التغيير */
+  font-size: 28px;
+}
+
+.HeroContiner .SectionFor .TitleSectionFor p {
+  color: var(--text-secondary); /* تم التغيير */
+}
+
+.HeroContiner .SectionFor .BoxParts {
+  width: 95%;
+  height: 95%;
+  border-radius: 10px;
+  /* background: var(--bg-secondary); تم التغيير: خلفية البطاقات */
+  /* border: 1px solid var(--border-color); إضافة حدود */
+  /* border: 1px solid red; */
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  /* box-shadow: var(--shadow-md); إضافة ظل */
+}
+
+.SectionFor .BoxParts .TitlePartOne,
+.SectionFor .BoxParts .TitlePartTow {
+  margin: 20px 0 0 0;
+  width: 100%;
+  text-align: center;
+  color: var(--text-primary); /* تم التغيير */
+}
+
+.SectionFor .BoxParts .SliderBrand,
+.SectionFor .BoxParts .SliderBodyType {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid var(--border-color); /* تم التغيير */
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: var(--shadow-sm); /* تم التغيير */
+  background: var(--bg-primary); /* خلفية السلايدر */
+}
+
+.SectionFor .BoxParts .SliderBrand .nav-btn,
+.SectionFor .BoxParts .SliderBodyType .btnSliderBodyType {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 35px;
+  color: var(--accent-text); /* تم التغيير */
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  cursor: pointer;
+  z-index: 10; /* ضمان ظهورها فوق المحتوى */
+}
+
+.SectionFor .BoxParts .SliderBrand .prev {
+  left: 5px;
+  background: var(--accent-color); /* تم التغيير */
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  box-shadow: var(--shadow-md);
+}
+
+.SectionFor .BoxParts .SliderBrand .next {
+  right: 5px;
+  background: var(--accent-color); /* تم التغيير */
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  box-shadow: var(--shadow-md);
+}
+
+.SectionFor .BoxParts .SliderBodyType .Left {
+  left: 5px;
+  background: var(--accent-color); /* تم التغيير */
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  box-shadow: var(--shadow-md);
+}
+
+.SectionFor .BoxParts .SliderBodyType .Right {
+  right: 5px;
+  background: var(--accent-color); /* تم التغيير */
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  box-shadow: var(--shadow-md);
+}
+
+.SectionFor .BoxParts .PartOneSectionFor {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: start;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 300px;
+  gap: 20px;
+  padding: 10px 40px; /* زيادة padding لتجنب تداخل أزرار التنقل */
+  scrollbar-width: none;
+}
+
+.SectionFor .BoxParts .PartTowSectionFor {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 320px;
+  gap: 20px;
+  padding: 10px 40px; /* زيادة padding */
+  scrollbar-width: none;
+}
+
+.PartOneSectionFor::-webkit-scrollbar,
+.PartTowSectionFor::-webkit-scrollbar {
+  display: none;
+}
+
+.SectionFor .BoxParts .PartOneSectionFor a,
+.SectionFor .BoxParts .PartTowSectionFor a {
+  text-decoration: none;
+}
+
+.SectionFor .BoxParts .PartOneSectionFor .CardPartOne {
+  flex: 0 0 calc(40% - 100px);
+  width: 150px;
+  min-height: 100px;
+  padding: 10px 5px;
+  border: 1px solid var(--border-color); /* تم التغيير */
+  background: var(--bg-secondary); /* تم التغيير */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  box-shadow: var(--shadow-sm);
+}
+
+.SectionFor .BoxParts .PartOneSectionFor .CardPartOne:hover {
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.SectionFor .BoxParts .PartTowSectionFor .CardBodyType {
+  flex: 0 0 calc(30% - 100px);
+  min-height: 130px;
+  width: 160px;
+  background: var(--bg-secondary); /* تم التغيير */
+  border: 1px solid var(--border-color); /* تم التغيير */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  gap: 10px;
+  transition: 0.5s;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.SectionFor .BoxParts .PartTowSectionFor .CardBodyType:hover {
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.SectionFor .BoxParts .PartOneSectionFor .CardPartOne .IconBrand {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e9ecef; /* تم التغيير: بدلاً من الأبيض الثابت */
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 1px solid var(--border-color);
+}
+
+.SectionFor .BoxParts .PartOneSectionFor .CardPartOne .IconBrand img {
+  width: 40px;
+}
+
+.SectionFor .BoxParts .PartOneSectionFor .CardPartOne .BarndNameAndCount {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.SectionFor .BoxParts .PartOneSectionFor .CardPartOne .BarndNameAndCount p {
+  background: var(--accent-color); /* تم التغيير */
+  color: var(--accent-text); /* تم التغيير */
+  padding: 2px 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  font-size: 14px;
+}
+
+.SectionFor .BoxParts .PartOneSectionFor .CardPartOne .BarndNameAndCount h5 {
+  color: var(--text-primary); /* تم التغيير */
+}
+
+.SectionFor .BoxParts .PartTowSectionFor .CardBodyType h4 {
+  color: var(--text-primary); /* تم التغيير */
+}
+
+.SectionFor .BoxParts .PartTowSectionFor .CardBodyType .iconBodyType {
+  width: 80px;
+  min-height: 80px;
+  padding: 0px 10px;
+  color: var(--accent-color); /* تم التغيير */
+}
+
+/* ***************************** */
+/* Skeleton لبطاقات الماركات */
+.sk-brand-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.sk-brand-name {
+  width: 60px;
+  height: 16px;
+}
+
+.sk-brand-count {
+  width: 40px;
+  height: 18px;
+  border-radius: 5px;
+}
+/* ***************************** */
+/* Skeleton لهياكل السيارات */
+.sk-bodytype-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.sk-bodytype-name {
+  width: 50px;
+  height: 16px;
+  border-radius: 4px;
+  margin: 8px auto 0;
+}
+/* End SectionFor */
+
+/* إخفاء محتويات skeleton-card للبطاقات الجديدة */
+.CardPartOne.skeleton-card .IconBrand img,
+.CardPartOne.skeleton-card .BarndNameAndCount h5,
+.CardPartOne.skeleton-card .BarndNameAndCount p {
+  visibility: hidden;
+}
+
+.CardBodyType.skeleton-card .iconBodyType,
+.CardBodyType.skeleton-card h4 {
+  visibility: hidden;
+}
+
+/* Start media */
+@media (max-width: 1115px) {
+  .SectionOne .TextAndSearch .Text h2:nth-child(1) {
+    font-size: 40px;
+  }
+  .SectionOne .TextAndSearch .Text h2:nth-child(2) {
+    font-size: 45px;
+    margin: -10px 0 0 0;
+  }
+  .SectionOne .TextAndSearch .Text p {
+    font-size: 18px;
+    max-width: 350px;
+  }
+  .SectionOne .TextAndSearch .Search {
+    width: 350px;
+  }
+  .HeroContiner .SectionOne .ImageSectionOne {
+    width: 400px;
+    height: 260px;
+  }
+  .SectionTow .SliderContainer .Left {
+    left: -25px;
+    font-size: 30px;
+  }
+  .SectionTow .SliderContainer .Right {
+    right: -25px;
+    font-size: 30px;
+  }
+
+  .SectionThree .BoxSectionThree .BoxCardSectionThree .CardSectionThree {
+    margin: 30px 0 0 0;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 930px) {
+  .SectionOne .TextAndSearch .Text h2:nth-child(1) {
+    font-size: 30px;
+  }
+  .SectionOne .TextAndSearch .Text h2:nth-child(2) {
+    font-size: 35px;
+    margin: -10px 0 0 0;
+  }
+  .SectionOne .TextAndSearch .Text p {
+    font-size: 18px;
+    max-width: 310px;
+  }
+  .SectionOne .TextAndSearch .Search {
+    width: 350px;
+  }
+  .HeroContiner .SectionOne .ImageSectionOne {
+    width: 370px;
+    height: 260px;
+  }
+}
+
+@media (max-width:915px) and (max-height:412px){
+  .SectionTow .NewCar {
+    height: 120vh;
+  }
+}
+
+@media (max-width:880px) {
+   .SectionOne .TextAndSearch .Search {
+    width: 300px;
+  }
+}
+
+@media (max-width: 800px) {
+  .HeroContiner .SectionOne {
+    justify-content: start;
+    margin: 0 20px 0 0;
+  }
+  .HeroContiner .SectionOne .ImageSectionOne {
+    display: none;
+  }
+
+  .SectionOne .TextAndSearch .Text h2:nth-child(1) {
+    font-size: 40px;
+  }
+  .SectionOne .TextAndSearch .Text h2:nth-child(2) {
+    font-size: 45px;
+    margin: -30px 0 0 0;
+  }
+  .SectionOne .TextAndSearch .Text p {
+    font-size: 18px;
+    max-width: 350px;
+  }
+  .SectionOne .TextAndSearch .Search {
+    width: 300px;
+  }
+  .HeroContiner .SectionOne .ImageSectionOne {
+    width: 400px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 645px) {
+  .SectionTow .TitleSectionTow .Text {
+    width: 350px;
+    /* background: red; */
+  }
+  .SectionTow .TitleSectionTow .Text h3 {
+    font-size: 18px;
+  }
+  .SectionTow .TitleSectionTow .Text p {
+    font-size: 15px;
+  }
+  .SectionTow .TitleSectionTow .Link {
+    /* background: red; */
+    padding: 5px 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .HeroContiner .SectionOne {
+    justify-content: center;
+    align-items: center;
+    margin: 0 0px 0 0;
+  }
+
+  .SectionOne .TextAndSearch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .SectionOne .TextAndSearch .Text h2:nth-child(1) {
+    font-size: 40px;
+    text-align: center;
+    margin: 0 0 0 20px;
+  }
+  .SectionOne .TextAndSearch .Text h2:nth-child(2) {
+    font-size: 45px;
+    margin: -30px 0 0 0;
+    text-align: center;
+  }
+  .SectionOne .TextAndSearch .Text p {
+    font-size: 18px;
+    max-width: 100%;
+    text-align: center;
+  }
+  .SectionTow .NewCar {
+    height: 56vh;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 10px;
+    margin: 20px 0 20px 0;
+    /* background: red; */
+  }
+  .SectionTow .SliderContainer .NewCar {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 0;
+  }
+  .SectionTow .SliderContainer .NewCar .CardCar {
+    min-width: 90%;
+    width: 90%;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    height: 489px;
+    margin: 0 10px 0 0 ;
+  }
+  .SectionTow .SliderContainer .Left,
+  .SectionTow .SliderContainer .Right {
+    left: -20px;
+    font-size: 30px;
+  }
+
+  .HeroContiner .SectionThree {
+    height: auto;
+    min-height: 1000px;
+  }
+
+  .SectionThree .BoxSectionThree .BoxCardSectionThree .CardSectionThree {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .SectionTow .TitleSectionTow .Text {
+    width: 250px;
+    /* background: red; */
+  }
+  .SectionTow .TitleSectionTow .Text h3 {
+    font-size: 15px;
+  }
+  .SectionTow .TitleSectionTow .Text p {
+    font-size: 12px;
+  }
+  .SectionTow .TitleSectionTow .Link {
+    /* background: red; */
+    padding: 5px 12px;
+    font-size: 12px;
+    gap: 2px;
+  }
+
+  .SectionThree .BoxSectionThree .TitleSectionThree h3,
+  .HeroContiner .SectionFor .TitleSectionFor h3 {
+    font-size: 20px;
+  }
+
+}
+
+/* @media (max-width:500px) {
+  .SectionTow .NewCar {
+    height: 70vh;
+  }
+} */
+
+
+/* dual fast cooling ultra-silent mobile phone cooler */
+/* End media */

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        var saved = sessionStorage.getItem("site-theme"); // ✅ sessionStorage
+        if (saved) {
+          document.documentElement.setAttribute("data-theme", saved);
+        } else {
+          var isDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+          document.documentElement.setAttribute(
+            "data-theme",
+            isDark ? "dark" : "light"
+          );
+        }
+
+        window
+          .matchMedia("(prefers-color-scheme: dark)")
+          .addEventListener("change", function (e) {
+            if (!sessionStorage.getItem("site-theme")) {
+              // ✅ sessionStorage
+              document.documentElement.setAttribute(
+                "data-theme",
+                e.matches ? "dark" : "light"
+              );
+            }
+          });
+      })();
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="public/logo-car.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Inter:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="author" content="Almalih Motors" />
+    <meta name="robots" content="index, follow" />
+    <title>Almalih Motors - وجهتك الأولى لشراء السيارات</title>
+    <meta
+      name="description"
+      content="أفضل الأسعار وأحدث موديلات السيارات في سوريا"
+    />
+    <script type="speculationrules">
+      {
+        "prefetch": [
+          {
+            "source": "list",
+            "urls": ["/allCar", "/Whoarewe", "/Contact"]
+          }
+        ],
+        "prerender": [
+          {
+            "source": "document",
+            "where": {
+              "or": [
+                { "selector_matches": ".TagNavBar a" },
+                { "selector_matches": ".Link a" },
+                { "selector_matches": ".SearchNew" },
+                { "selector_matches": ".ditalsCar a" },
+                { "selector_matches": ".CardCar a" },
+                { "selector_matches": ".related-car-card" },
+                { "selector_matches": ".CardPartOne" },
+                { "selector_matches": ".CardBodyType" },
+                { "selector_matches": ".NavBarContiner a" }
+              ]
+            },
+            "eagerness": "moderate"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

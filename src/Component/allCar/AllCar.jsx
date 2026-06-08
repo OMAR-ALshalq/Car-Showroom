@@ -505,7 +505,6 @@ export default function AllCar() {
                       name="bodyType"
                       checked={selectedBodyType === bodyType}
                       onClick={() => setSelectedBodyType(bodyType)}
-                      readOnly
                     />
                     <p>{bodyType}</p>
                   </div>

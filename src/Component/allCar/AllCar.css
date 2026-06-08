@@ -794,8 +794,8 @@ input[type="radio"] {
     object-fit: cover;
   }
 
-  .SectionTow .SliderContainer .NewCar {
+  /* .SectionTow .SliderContainer .NewCar {
     height: 510px;
-  }
+  } */
 }
 /* End Media */

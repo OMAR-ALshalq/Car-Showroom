@@ -1193,7 +1193,7 @@
   }
 
   .SectionTow .NewCar {
-    height: 56vh;
+    /* height: 50px; */
     display: flex;
     align-items: center;
     overflow-x: auto;
@@ -1210,7 +1210,8 @@
     scroll-snap-type: x mandatory;
     gap: 15px;
     padding: 0;
-    /* background: green; */
+    height: 515px;
+    background: green;
   }
   .SectionTow .SliderContainer .NewCar .CardCar {
     min-width: 90%;

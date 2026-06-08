@@ -57,7 +57,7 @@
 // export default App;
 
 import "./App.css";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import NavBar from "./Component/navBar/NavBar.jsx";
 import Hero from "./Component/hero/Hero.jsx";
@@ -111,7 +111,7 @@ function App() {
     <>
       {showWelcome && <WelcomeSite onFinish={handleWelcomeFinish} />}
       <div style={{ visibility: showWelcome ? "hidden" : "visible" }}>
-        <HashRouter>
+        <BrowserRouter>
           <NavBar />
           <main>
             <Routes>
@@ -123,7 +123,7 @@ function App() {
             </Routes>
           </main>
           <Footer />
-        </HashRouter>
+        </BrowserRouter>
       </div>
 
       {/* نظام المقارنة */}

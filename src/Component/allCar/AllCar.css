@@ -10,18 +10,18 @@
 }
 
 .AllCarContiner .BoxMainAllCar .TitleBoxMainAllCar h3 {
-  color: var(--text-primary); /* تم التغيير */
+  color: var(--text-primary);
   font-size: 28px;
 }
 
 .AllCarContiner .BoxMainAllCar .TitleBoxMainAllCar p {
-  color: var(--text-secondary); /* تم التغيير */
+  color: var(--text-secondary);
 }
 
 .AllCarContiner .BoxMainAllCar .TitleBoxMainAllCar hr {
   border: none;
   height: 1px;
-  background: var(--border-color); /* إضافة لون للخط */
+  background: var(--border-color);
   margin: 10px 0;
 }
 
@@ -33,20 +33,20 @@
 
 .AllCarContiner .BoxMainAllCar .BoxAllCarAndFilter .FilterCar {
   width: 300px;
-  border: 1px solid var(--border-color); /* تم التغيير */
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  background: var(--bg-secondary); /* تم التغيير */
+  background: var(--bg-secondary);
   box-shadow: var(--shadow-sm);
 }
 
 .AllCarContiner .BoxMainAllCar .BoxAllCarAndFilter .BoxAllCar {
-  background: var(--bg-secondary); /* تم التغيير */
+  background: var(--bg-secondary);
   overflow-x: scroll;
-  border: 1px solid var(--border-color); /* تم التغيير */
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   flex: 1;
   -webkit-border-radius: 10px;
@@ -75,8 +75,8 @@
 .BoxAllCar .SliderCardAllCar .CardAllCar .Card {
   width: 250px;
   height: 460px;
-  background: var(--bg-primary); /* تم التغيير */
-  border: 1px solid var(--border-color); /* تم التغيير */
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -97,7 +97,7 @@
 .BoxAllCar .SliderCardAllCar .CardAllCar .Card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--accent-color); /* تمييز الحدود عند hover */
+  border-color: var(--accent-color);
 }
 
 .SliderCardAllCar .CardAllCar .Card .ImagCar {
@@ -142,20 +142,20 @@
 }
 
 .SliderCardAllCar .CardAllCar .Card .brandAndyear .brand h4 {
-  color: var(--accent-color); /* تم التغيير */
+  color: var(--accent-color);
   font-size: 20px;
 }
 
 .SliderCardAllCar .CardAllCar .Card .brandAndyear .year {
   display: flex;
   align-items: center;
-  color: var(--text-secondary); /* تم التغيير */
+  color: var(--text-secondary);
   gap: 5px;
 }
 
 .SliderCardAllCar .CardAllCar .Card .brandAndyear .year .IconYearCar {
   font-size: 18px;
-  color: var(--text-secondary); /* تم التغيير */
+  color: var(--text-secondary);
 }
 
 .SliderCardAllCar .CardAllCar .Card .modelAndbodyType {
@@ -186,13 +186,10 @@
 .CardAllCar .Card .modelAndbodyType .bodytype h3 {
   width: 50px;
   height: 25px;
-  /* padding: 2px 10px; */
   font-size: 10px;
   border-radius: 4px;
   color: var(--accent-text);
-  /*تمالتغيير*/
   background: var(--accent-color);
-  /*تمالتغيير*/
   -webkit-border-radius: 2px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -214,12 +211,12 @@
 
 .CardAllCar .Card .DisCar .IconDisCar {
   font-size: 18px;
-  color: var(--text-secondary); /* تم التغيير */
+  color: var(--text-secondary);
 }
 
 .CardAllCar .Card .DisCar .TextDisCar p {
   margin: -7px 0 0 0;
-  color: var(--text-secondary); /* تم التغيير */
+  color: var(--text-secondary);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -241,11 +238,11 @@
   height: 1px;
   border-radius: 2px;
   border: none;
-  background: var(--border-color); /* تم التغيير */
+  background: var(--border-color);
 }
 
 .CardAllCar .Card .priceAndSitels > h3 {
-  color: var(--text-secondary); /* تم التغيير */
+  color: var(--text-secondary);
   font-size: 14px;
 }
 
@@ -255,11 +252,11 @@
 }
 
 .CardAllCar .Card .priceAndSitels .price h3 {
-  color: var(--accent-color); /* تم التغيير */
+  color: var(--accent-color);
 }
 
 .CardAllCar .Card .priceAndSitels .price .IconPrice {
-  color: var(--accent-color); /* تم التغيير */
+  color: var(--accent-color);
 }
 
 .CardAllCar .Card .priceAndSitels .ditalsCar {
@@ -273,8 +270,8 @@
   text-decoration: none;
   padding: 5px 20px;
   border-radius: 20px;
-  color: var(--accent-text); /* تم التغيير: نص أبيض */
-  background: var(--accent-color); /* تم التغيير: خلفية سوداء */
+  color: var(--accent-text);
+  background: var(--accent-color);
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
@@ -295,7 +292,6 @@
 }
 
 /* Start skeleton loding */
-/* Skeleton */
 .skeleton-card {
   pointer-events: none;
 }
@@ -409,7 +405,6 @@ input[type="number"] {
   height: 50px;
   display: none;
 }
-
 /* End BoxFilterTow */
 
 /* Start FilterCar (الشريط الجانبي) */
@@ -418,12 +413,12 @@ input[type="number"] {
 }
 
 .BoxMainAllCar .BoxAllCarAndFilter .FilterCar .BoxFilterCar .TitleFilterCar h3 {
-  color: var(--text-primary); /* تم التغيير */
+  color: var(--text-primary);
 }
 
 .BoxAllCarAndFilter .FilterCar .BoxFilterCar .filterPrice h5,
 .BoxAllCarAndFilter .FilterCar .BoxFilterCar .fitlerModel h5 {
-  color: var(--text-primary); /* تم التغيير */
+  color: var(--text-primary);
 }
 
 .BoxAllCarAndFilter .FilterCar .BoxFilterCar .filterPrice input,
@@ -432,14 +427,14 @@ input[type="number"] {
   margin: 10px 0 0 0;
   padding: 5px 10px;
   width: 220px;
-  border: 1px solid var(--border-color); /* تم التغيير */
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
-  background: var(--bg-primary); /* تم التغيير */
-  color: var(--text-primary); /* تم التغيير */
+  background: var(--bg-primary);
+  color: var(--text-primary);
   transition: var(--transition);
 }
 
@@ -453,7 +448,7 @@ input[type="number"] {
   margin: 10px -10px 0 0;
   border: none;
   height: 1px;
-  background: var(--border-color); /* تم التغيير */
+  background: var(--border-color);
 }
 
 .BoxAllCarAndFilter .FilterCar .BoxFilterCar .BrandFilterCar .radioFilter,
@@ -466,28 +461,17 @@ input[type="number"] {
 
 .BoxAllCarAndFilter .FilterCar .BoxFilterCar .BrandFilterCar > h5,
 .BoxAllCarAndFilter .FilterCar .BoxFilterCar .bodyTypeFilterCar > h5 {
-  color: var(--text-primary); /* تم التغيير */
+  color: var(--text-primary);
 }
 
 .BoxAllCarAndFilter .FilterCar .BoxFilterCar .BrandFilterCar .radioFilter p,
 .BoxAllCarAndFilter .FilterCar .BoxFilterCar .bodyTypeFilterCar .radioFilter p {
-  color: var(--text-secondary); /* تم التغيير */
+  color: var(--text-secondary);
 }
 
-/* تنسيق الراديو */
-.BoxAllCarAndFilter
-  .FilterCar
-  .BoxFilterCar
-  .BrandFilterCar
-  .radioFilter
-  input[type="radio"],
-.BoxAllCarAndFilter
-  .FilterCar
-  .BoxFilterCar
-  .bodyTypeFilterCar
-  .radioFilter
-  input[type="radio"] {
-  accent-color: var(--accent-color); /* لون الراديو عند التحديد */
+/* توحيد تنسيق الراديو لجميع الحالات */
+input[type="radio"] {
+  accent-color: var(--accent-color);
   cursor: pointer;
 }
 
@@ -521,13 +505,13 @@ input[type="number"] {
   right: 0px;
   width: 350px;
   height: 350px;
-  background: var(--bg-secondary); /* تم التغيير */
+  background: var(--bg-secondary);
   overflow: scroll;
   z-index: 1000;
   padding: 20px 0;
   border-radius: 8px;
-  border: 1px solid var(--border-color); /* تم التغيير */
-  box-shadow: var(--shadow-lg); /* إضافة ظل */
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
 }
 
 .FilterTow::-webkit-scrollbar {
@@ -537,12 +521,12 @@ input[type="number"] {
 .CloseiconFilter {
   font-size: 20px;
   cursor: pointer;
-  color: var(--text-secondary); /* تم التغيير */
+  color: var(--text-secondary);
   transition: var(--transition);
 }
 
 .CloseiconFilter:hover {
-  color: var(--accent-color); /* تم التغيير */
+  color: var(--accent-color);
 }
 
 /* أنميشن الفتح */
@@ -602,7 +586,7 @@ input[type="number"] {
 .FilterTow .BoxFilterCar .TitleFilterCar h3,
 .FilterTow .BoxFilterCar .bodyTypeFilterCar h5,
 .FilterTow .BoxFilterCar .bodyTypeFilterCar p {
-  color: var(--text-primary); /* تم التغيير */
+  color: var(--text-primary);
 }
 
 .FilterTow .BoxFilterCar .filterPrice input,
@@ -611,14 +595,14 @@ input[type="number"] {
   margin: 10px 0 0 0;
   padding: 5px 10px;
   width: 220px;
-  border: 1px solid var(--border-color); /* تم التغيير */
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
-  background: var(--bg-primary); /* تم التغيير */
-  color: var(--text-primary); /* تم التغيير */
+  background: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 .FilterTow .BrandFilterCar .radioFilter,
@@ -626,28 +610,16 @@ input[type="number"] {
   display: flex;
   align-items: center;
   margin: 5px 0 0 0;
-  color: var(--text-secondary); /* تم التغيير */
+  color: var(--text-secondary);
   gap: 10px;
 }
 
-.FilterTow .BrandFilterCar .radioFilter input[type="radio"],
-.FilterTow .bodyTypeFilterCar .radioFilter input[type="radio"] {
-  accent-color: var(--accent-color);
-  cursor: pointer;
-}
-
-.radioFilter input[type="radio"] {
-  accent-color: var(--accent-color) !important;
-  cursor: pointer;
-  width: 16px;
-  height: 16px;
-}
-
+/* إزالة التكرار والاكتفاء بالقاعدة العامة */
 .FilterTow .BoxFilterCar hr {
   margin: 10px -10px 0 0;
   border: none;
   height: 1px;
-  background: var(--border-color); /* تم التغيير */
+  background: var(--border-color);
 }
 
 /* رسالة عدم وجود نتائج */
@@ -687,8 +659,8 @@ input[type="number"] {
     .boxIconfilterTow
     .IconFilter {
     padding: 5px 10px;
-    background: var(--accent-color); /* تم التغيير */
-    color: var(--accent-text); /* تم التغيير */
+    background: var(--accent-color);
+    color: var(--accent-text);
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -699,17 +671,17 @@ input[type="number"] {
   }
 
   .BoxMainAllCar .BoxAllCarAndFilter .BoxFilterTow .boxIconfilterTow p {
-    color: var(--text-primary); /* تم التغيير */
+    color: var(--text-primary);
     font-size: 20px;
   }
 
   .BoxMainAllCar .BoxAllCarAndFilter .BoxFilterTow .searchBoxFilterTow {
     width: 350px;
-    background: var(--bg-secondary); /* تم التغيير */
+    background: var(--bg-secondary);
     padding: 5px 10px;
     display: flex;
     align-items: center;
-    border: 1px solid var(--border-color); /* تم التغيير */
+    border: 1px solid var(--border-color);
     gap: 5px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -724,7 +696,7 @@ input[type="number"] {
     .BoxFilterTow
     .searchBoxFilterTow
     .IconSearchFiltertow {
-    color: var(--text-secondary); /* تم التغيير */
+    color: var(--text-secondary);
     font-size: 20px;
   }
 
@@ -738,8 +710,8 @@ input[type="number"] {
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    background: transparent; /* تم التغيير */
-    color: var(--text-primary); /* تم التغيير */
+    background: transparent;
+    color: var(--text-primary);
   }
 
   .BoxMainAllCar
@@ -755,11 +727,9 @@ input[type="number"] {
   .BoxAllCar .SliderCardAllCar .CardAllCar .Card {
     width: 325px;
     height: 520px;
-    /* background: red; */
   }
 
   .SliderCardAllCar .CardAllCar .Card .ImagCar img {
-    /* width: 95%; */
     height: 250px;
   }
 }
@@ -795,8 +765,8 @@ input[type="number"] {
   .BoxAllCar .SliderCardAllCar .CardAllCar .Card {
     width: 90%;
     height: 530px;
-    background: var(--bg-primary); /* تم التغيير */
-    border: 1px solid var(--border-color); /* تم التغيير */
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;

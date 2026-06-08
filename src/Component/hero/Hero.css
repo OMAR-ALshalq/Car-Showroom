@@ -1106,14 +1106,14 @@
   }
 }
 
-@media (max-width:915px) and (max-height:412px){
+@media (max-width: 915px) and (max-height: 412px) {
   .SectionTow .NewCar {
     height: 120vh;
   }
 }
 
-@media (max-width:880px) {
-   .SectionOne .TextAndSearch .Search {
+@media (max-width: 880px) {
+  .SectionOne .TextAndSearch .Search {
     width: 300px;
   }
 }
@@ -1191,6 +1191,7 @@
     max-width: 100%;
     text-align: center;
   }
+
   .SectionTow .NewCar {
     height: 56vh;
     display: flex;
@@ -1203,10 +1204,13 @@
   }
   .SectionTow .SliderContainer .NewCar {
     display: flex;
+    /* justify-content: center; */
+    align-items: center;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    gap: 20px;
+    gap: 15px;
     padding: 0;
+    /* background: green; */
   }
   .SectionTow .SliderContainer .NewCar .CardCar {
     min-width: 90%;
@@ -1214,8 +1218,13 @@
     scroll-snap-align: center;
     flex-shrink: 0;
     height: 489px;
-    margin: 0 10px 0 0 ;
+    margin: 0 0px 0 20px ;
   }
+
+  .SectionTow .SliderContainer .NewCar .CardCar:first-child {
+    margin: 0 15px 0 10px;
+  }
+
   .SectionTow .SliderContainer .Left,
   .SectionTow .SliderContainer .Right {
     left: -20px;
@@ -1254,7 +1263,6 @@
   .HeroContiner .SectionFor .TitleSectionFor h3 {
     font-size: 20px;
   }
-
 }
 
 /* @media (max-width:500px) {
@@ -1262,7 +1270,6 @@
     height: 70vh;
   }
 } */
-
 
 /* dual fast cooling ultra-silent mobile phone cooler */
 /* End media */

@@ -309,7 +309,7 @@ export default function Hero() {
           </div>
           <div
             className="ImageSectionOne"
-            style={{ backgroundImage: "url('/image/imgMain.jpg')" }}
+            style={{ backgroundImage: "url('image/imgMain.jpg')" }}
           ></div>
         </div>
         <div className="SpacSection"></div>

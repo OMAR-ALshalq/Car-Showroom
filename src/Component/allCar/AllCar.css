@@ -636,6 +636,13 @@ input[type="number"] {
   cursor: pointer;
 }
 
+.radioFilter input[type="radio"] {
+  accent-color: var(--accent-color) !important;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
 .FilterTow .BoxFilterCar hr {
   margin: 10px -10px 0 0;
   border: none;

@@ -503,11 +503,11 @@ export default function AllCar() {
                     <input
                       type="radio"
                       name="bodyType"
-                      id={`body-${bodyType}`}
                       checked={selectedBodyType === bodyType}
-                      onChange={() => setSelectedBodyType(bodyType)}
+                      onClick={() => setSelectedBodyType(bodyType)}
+                      readOnly
                     />
-                    <label htmlFor={`body-${bodyType}`}>{bodyType}</label>
+                    <p>{bodyType}</p>
                   </div>
                 ))}
               </div>

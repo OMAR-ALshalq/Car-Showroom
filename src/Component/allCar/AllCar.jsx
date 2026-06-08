@@ -166,39 +166,44 @@ export default function AllCar() {
 
   // ✅ Skeleton
   const CarSkeleton = () => (
-    <div className="Card is-loading">
-      <div className="ImagCar skeletonimag"></div>
+    <div className="Card skeleton-card">
+      <div className="ImagCar">
+        <div className="shimmer sk-image-hero"></div>
+      </div>
       <div className="brandAndyear">
-        <div className="brand skeletonbrand">
-          <h4></h4>
+        <div className="brand">
+          <div className="shimmer sk-brand"></div>
         </div>
-        <div className="year skeletonyear">
-          <h5></h5>
+        <div className="year">
+          <div className="shimmer sk-year"></div>
         </div>
       </div>
       <div className="modelAndbodyType">
-        <div className="skeletontype">
-          <h3></h3>
+        <div className="model">
+          <div className="shimmer sk-model"></div>
         </div>
-        <div className="skeletonbodytype">
-          <h3></h3>
+        <div className="bodytype">
+          <div className="shimmer sk-bodytype"></div>
         </div>
       </div>
       <div className="DisCar">
-        <div
-          className="TextDisCar skeleton"
-          style={{ height: "40px", width: "100%" }}
-        >
-          <p></p>
+        <div className="IconDisCar">
+          <div className="shimmer sk-icon"></div>
+        </div>
+        <div className="TextDisCar">
+          <div className="shimmer sk-text"></div>
+          <div className="shimmer sk-text-short"></div>
         </div>
       </div>
       <div className="priceAndSitels">
         <hr />
-        <div
-          className="price skeleton"
-          style={{ height: "30px", marginTop: "10px" }}
-        >
-          <h3></h3>
+        <h3>السعر :</h3>
+        <div className="price">
+          <div className="shimmer sk-price"></div>
+          <div className="shimmer sk-calc-icon"></div>
+        </div>
+        <div className="ditalsCar">
+          <div className="shimmer sk-btn"></div>
         </div>
       </div>
     </div>

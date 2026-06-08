@@ -295,114 +295,97 @@
 }
 
 /* Start skeleton loding */
-.skeleton {
-  background-color: var(--bg-tertiary); /* تم التغيير: استخدام لون متغير */
-  background-image: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  background-size: 200% 100%;
-  background-repeat: no-repeat;
-  animation: shimmer 1.5s infinite;
-  border-radius: 4px;
-  border: none !important;
+/* Skeleton */
+.skeleton-card {
+  pointer-events: none;
 }
-
-[data-theme="dark"] .skeleton {
-  background-color: var(--bg-tertiary);
-  background-image: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.05),
-    transparent
-  );
-}
-
-.is-loading .skeletonimag {
-  width: 95%;
-  height: 150px;
-  background-color: var(--bg-tertiary); /* تم التغيير */
-  background-image: linear-gradient(
-    270deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  background-size: 200% 100%;
-  background-repeat: no-repeat;
-  animation: shimmer 1.5s infinite;
-  border-radius: 4px;
-  border: none !important;
-}
-
-[data-theme="dark"] .is-loading .skeletonimag {
-  background-image: linear-gradient(
-    270deg,
-    transparent,
-    rgba(255, 255, 255, 0.05),
-    transparent
-  );
-}
-
-.is-loading .brandAndyear .skeletonbrand h4,
-.is-loading .brandAndyear .skeletonyear h5 {
-  padding: 2px 10px;
-  width: 30px;
-  background-color: var(--bg-tertiary); /* تم التغيير */
-  background-image: linear-gradient(
-    270deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  background-size: 200% 100%;
-  background-repeat: no-repeat;
-  animation: shimmer 1.5s infinite;
-  border-radius: 4px;
-  border: none !important;
-}
-
-.is-loading .modelAndbodyType .skeletontype h3,
-.is-loading .modelAndbodyType .skeletonbodytype h3 {
-  padding: 2px 10px;
-  width: 30px;
-  background: var(--bg-tertiary); /* تم التغيير */
-  background-image: linear-gradient(
-    270deg,
-    transparent,
-    rgba(255, 255, 255, 0.3),
-    transparent
-  );
-  background-size: 200% 100%;
-  background-repeat: no-repeat;
-  animation: shimmer 1.5s infinite;
-  border-radius: 4px;
-  border: none !important;
-}
-
-.is-loading svg,
-.is-loading hr,
-.is-loading a {
+.skeleton-card * {
   visibility: hidden;
 }
-
-.is-loading h3,
-.is-loading h4,
-.is-loading h5,
-.is-loading p {
-  height: 15px;
-  margin: 10px 0;
+.skeleton-card .shimmer {
+  visibility: visible;
 }
 
-@keyframes shimmer {
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--bg-tertiary) 25%,
+    var(--bg-primary) 50%,
+    var(--bg-tertiary) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmerMove 1.5s infinite linear;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--bg-tertiary) 25%,
+    rgba(255, 255, 255, 0.03) 50%,
+    var(--bg-tertiary) 75%
+  );
+  background-size: 200% 100%;
+}
+
+@keyframes shimmerMove {
   0% {
     background-position: -200% 0;
   }
   100% {
     background-position: 200% 0;
   }
+}
+
+.sk-image-hero {
+  width: 100%;
+  height: 150px;
+  border-radius: 5px;
+}
+.sk-brand {
+  width: 80px;
+  height: 20px;
+}
+.sk-year {
+  width: 50px;
+  height: 16px;
+}
+.sk-model {
+  width: 120px;
+  height: 18px;
+}
+.sk-bodytype {
+  width: 100px;
+  height: 18px;
+}
+.sk-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.sk-text {
+  width: 200px;
+  height: 14px;
+  margin-bottom: 6px;
+}
+.sk-text-short {
+  width: 140px;
+  height: 14px;
+}
+.sk-price {
+  width: 80px;
+  height: 20px;
+}
+.sk-calc-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.sk-btn {
+  width: 100px;
+  height: 32px;
+  border-radius: 20px;
+  margin: 0 auto;
 }
 /* End skeleton loding */
 

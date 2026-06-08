@@ -553,33 +553,33 @@ export default function AllCar() {
   const [maxPrice, setMaxPrice] = useState("");
 
   // ✅ مزامنة searchTerm + تحديد Radio Button
-  useEffect(() => {
-    setSearchTerm(searchFromUrl);
+useEffect(() => {
+  setSearchTerm(searchFromUrl);
 
-    // إذا كان البحث يطابق اسم ماركة، حددها
-    if (searchFromUrl && uniqueBrands.length > 0) {
-      const matchedBrand = uniqueBrands.find(
-        (b) => b.toLowerCase() === searchFromUrl.toLowerCase()
-      );
-      if (matchedBrand) {
-        setSelectedBrand(matchedBrand);
-        setSearchTerm("");
-        return;
-      }
+  if (searchFromUrl && uniqueBrands.length > 0) {
+    // ✅ مطابقة جزئية (وليس كاملة)
+    const matchedBrand = uniqueBrands.find((b) =>
+      b.toLowerCase().includes(searchFromUrl.toLowerCase())
+    );
+    if (matchedBrand) {
+      setSelectedBrand(matchedBrand);
+      setSearchTerm("");
+      return;
     }
+  }
 
-    // إذا كان البحث يطابق BodyType، حددها
-    if (searchFromUrl && uniqueBodyTypes.length > 0) {
-      const matchedBody = uniqueBodyTypes.find(
-        (b) => b.toLowerCase() === searchFromUrl.toLowerCase()
-      );
-      if (matchedBody) {
-        setSelectedBodyType(matchedBody);
-        setSearchTerm("");
-        return;
-      }
+  if (searchFromUrl && uniqueBodyTypes.length > 0) {
+    // ✅ مطابقة جزئية
+    const matchedBody = uniqueBodyTypes.find((b) =>
+      b.toLowerCase().includes(searchFromUrl.toLowerCase())
+    );
+    if (matchedBody) {
+      setSelectedBodyType(matchedBody);
+      setSearchTerm("");
+      return;
     }
-  }, [searchFromUrl, uniqueBrands, uniqueBodyTypes]);
+  }
+}, [searchFromUrl, uniqueBrands, uniqueBodyTypes]);
 
   // ✅ مزامنة selectedBrand مع الرابط
   useEffect(() => {

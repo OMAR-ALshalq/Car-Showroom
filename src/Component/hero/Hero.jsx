@@ -33,13 +33,24 @@ export default function Hero() {
   const [loading, setLoading] = useState(true); // ✅ حالة التحميل
   const [affordableCars, setAffordableCars] = useState([]);
   const [loadingAffordable, setLoadingAffordable] = useState(true);
+  // ✅ امسح الكاش عند F5
   useEffect(() => {
-    // ✅ تحقق من sessionStorage أولاً
+    const isRefresh =
+      performance.navigation?.type === 1 ||
+      performance.getEntriesByType("navigation")[0]?.type === "reload";
+
+    if (isRefresh) {
+      sessionStorage.removeItem("carsLatest");
+      sessionStorage.removeItem("carsAffordable");
+    }
+  }, []);
+
+  // ✅ جلب البيانات
+  useEffect(() => {
     const cachedLatest = sessionStorage.getItem("carsLatest");
     const cachedAffordable = sessionStorage.getItem("carsAffordable");
 
     if (cachedLatest && cachedAffordable) {
-      // ✅ استخدم البيانات المخزنة
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setCars8(JSON.parse(cachedLatest));
       setAffordableCars(JSON.parse(cachedAffordable));
@@ -48,7 +59,6 @@ export default function Hero() {
       return;
     }
 
-    // ✅ إذا ما فيه بيانات، جيب من السيرفر
     setLoading(true);
     setLoadingAffordable(true);
 
@@ -60,7 +70,6 @@ export default function Hero() {
         setCars8(latestRes.data);
         setAffordableCars(affordableRes.data);
 
-        // ✅ خزن في sessionStorage
         sessionStorage.setItem("carsLatest", JSON.stringify(latestRes.data));
         sessionStorage.setItem(
           "carsAffordable",
@@ -90,7 +99,7 @@ export default function Hero() {
     }
   };
   // End Slider NewCar
-  
+
   // Start Car Price
 
   // Start Contsoll Slider

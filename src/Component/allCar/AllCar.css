@@ -832,5 +832,9 @@ input[type="number"] {
     -o-border-radius: 5px;
     object-fit: cover;
   }
+
+  .SectionTow .SliderContainer .NewCar {
+    height: 510px;
+  }
 }
 /* End Media */

@@ -34,11 +34,24 @@ export default function Hero() {
   const [affordableCars, setAffordableCars] = useState([]);
   const [loadingAffordable, setLoadingAffordable] = useState(true);
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+    // ✅ تحقق من sessionStorage أولاً
+    const cachedLatest = sessionStorage.getItem("carsLatest");
+    const cachedAffordable = sessionStorage.getItem("carsAffordable");
+
+    if (cachedLatest && cachedAffordable) {
+      // ✅ استخدم البيانات المخزنة
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setCars8(JSON.parse(cachedLatest));
+      setAffordableCars(JSON.parse(cachedAffordable));
+      setLoading(false);
+      setLoadingAffordable(false);
+      return;
+    }
+
+    // ✅ إذا ما فيه بيانات، جيب من السيرفر
     setLoading(true);
     setLoadingAffordable(true);
 
-    // ✅ طلبين متوازيين - أسرع
     Promise.all([
       axios.get(`${API_URL}/api/cars/latest`),
       axios.get(`${API_URL}/api/cars/affordable`)
@@ -46,6 +59,14 @@ export default function Hero() {
       .then(([latestRes, affordableRes]) => {
         setCars8(latestRes.data);
         setAffordableCars(affordableRes.data);
+
+        // ✅ خزن في sessionStorage
+        sessionStorage.setItem("carsLatest", JSON.stringify(latestRes.data));
+        sessionStorage.setItem(
+          "carsAffordable",
+          JSON.stringify(affordableRes.data)
+        );
+
         setLoading(false);
         setLoadingAffordable(false);
       })
@@ -69,6 +90,7 @@ export default function Hero() {
     }
   };
   // End Slider NewCar
+  
   // Start Car Price
 
   // Start Contsoll Slider

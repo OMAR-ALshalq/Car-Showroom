@@ -1211,7 +1211,7 @@
     gap: 15px;
     padding: 0;
     height: 515px;
-    background: green;
+    /* background: green; */
   }
   .SectionTow .SliderContainer .NewCar .CardCar {
     min-width: 90%;

@@ -503,8 +503,9 @@ export default function AllCar() {
                     <input
                       type="radio"
                       name="bodyType"
+                      value={bodyType}
                       checked={selectedBodyType === bodyType}
-                      onClick={() => setSelectedBodyType(bodyType)}
+                      onChange={(e) => setSelectedBodyType(e.target.value)}
                     />
                     <p>{bodyType}</p>
                   </div>

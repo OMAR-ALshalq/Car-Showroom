@@ -1,5 +1,5 @@
 import "./DetailsCar.css";
-import SEO from "../seo/SEO"
+import SEO from "../seo/SEO";
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -22,6 +22,133 @@ import { LuStretchVertical } from "react-icons/lu";
 import { FaCheck } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { IoIosGitCompare } from "react-icons/io";
+
+// ============================================
+// 🎨 مكونات السكيلتون الكاملة (خارج المكون الرئيسي)
+// ============================================
+
+// سكيلتون لشريط العنوان والسعر
+const HeaderSkeleton = () => (
+  <div className="BoxAddressPage skeleton-box">
+    <div className="AddressPage">
+      <div className="shimmer shimmer-title-main"></div>
+    </div>
+    <div className="PriceCar">
+      <div className="shimmer shimmer-price-box"></div>
+      <div className="shimmer shimmer-whatsapp-btn"></div>
+    </div>
+  </div>
+);
+
+// سكيلتون لقسم الصور والمعلومات
+const ImageAndInfoSkeleton = () => (
+  <div className="ImagCarAndInfoCar skeleton-section">
+    <div className="ImageContainerSection">
+      <div className="ImageCar">
+        <div className="shimmer shimmer-main-image"></div>
+      </div>
+      <div className="ThumbnailsContainer">
+        {[1, 2, 3, 4].map((n) => (
+          <div key={n} className="ThumbnailItem">
+            <div className="shimmer shimmer-thumb"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div className="InfoCar">
+      <div className="AddressInfoCar">
+        {[1, 2, 3, 4].map((n) => (
+          <div key={n} className="shimmer shimmer-tag"></div>
+        ))}
+      </div>
+
+      <div className="detailsEngine">
+        {[1, 2, 3, 4, 5, 6].map((n) => (
+          <div key={n} className="engine-item">
+            <div className="shimmer shimmer-engine-icon"></div>
+            <div className="shimmer shimmer-engine-label"></div>
+            <div className="shimmer shimmer-engine-value"></div>
+          </div>
+        ))}
+      </div>
+
+      <div className="dicCar">
+        <div className="shimmer shimmer-desc-title"></div>
+        <div className="shimmer shimmer-desc-line"></div>
+        <div className="shimmer shimmer-desc-line"></div>
+        <div className="shimmer shimmer-desc-line shimmer-desc-line-short"></div>
+      </div>
+    </div>
+  </div>
+);
+
+// سكيلتون لقسم الميزات
+const FeaturesSkeleton = () => (
+  <div className="FeaturesCar skeleton-section">
+    <div className="TitleFeaturesCar">
+      <div className="shimmer shimmer-features-title"></div>
+    </div>
+    <div className="bodyFeaturesCar">
+      <div className="tabs-header">
+        {[1, 2, 3].map((n) => (
+          <div key={n} className="shimmer shimmer-tab-btn"></div>
+        ))}
+      </div>
+      <div className="tabs-content">
+        <ul className="features-grid">
+          {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
+            <li key={n}>
+              <div className="shimmer shimmer-check-icon"></div>
+              <div className="shimmer shimmer-feature-text"></div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+);
+
+// سكيلتون لبطاقة سيارة ذات صلة
+const RelatedCarSkeleton = () => (
+  <div className="related-skeleton skeleton-card">
+    <div className="shimmer shimmer-related-img"></div>
+    <div className="shimmer-related-info">
+      <div className="shimmer shimmer-related-title"></div>
+      <div className="shimmer shimmer-related-subtitle"></div>
+      <div className="shimmer shimmer-related-price"></div>
+    </div>
+  </div>
+);
+
+// سكيلتون لقسم السيارات ذات الصلة
+const RelatedCarsSkeleton = () => (
+  <div className="RelatedCars skeleton-section" dir="rtl">
+    <div className="TitleRelatedCars">
+      <div className="shimmer shimmer-related-main-title"></div>
+    </div>
+
+    {/* مجموعة 1 */}
+    <div className="related-group">
+      <div className="shimmer shimmer-group-title"></div>
+      <div className="related-cars-grid">
+        {[1, 2, 3, 4].map((n) => (
+          <RelatedCarSkeleton key={n} />
+        ))}
+      </div>
+    </div>
+
+    {/* مجموعة 2 */}
+    <div className="related-group">
+      <div className="shimmer shimmer-group-title"></div>
+      <div className="related-cars-grid">
+        {[1, 2, 3].map((n) => (
+          <RelatedCarSkeleton key={n} />
+        ))}
+      </div>
+    </div>
+  </div>
+);
 
 export default function DetailsCar() {
   const { id } = useParams();
@@ -46,15 +173,12 @@ export default function DetailsCar() {
   // ✅ جلب سيارات ذات صلة
   useEffect(() => {
     if (!dataCar) return;
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoadingRelated(true);
 
     const { brand, model, bodyType } = dataCar;
 
     Promise.all([
-      axios.get(
-        `${API_URL}/api/search/${brand}/${model}/${bodyType}`
-      ),
+      axios.get(`${API_URL}/api/search/${brand}/${model}/${bodyType}`),
       axios.get(`${API_URL}/api/search/${brand}/${model}`),
       axios.get(`${API_URL}/api/search/${brand}`)
     ])
@@ -100,21 +224,10 @@ export default function DetailsCar() {
     );
   };
 
-  // ✅ سكيلتون
-  const RelatedCarSkeleton = () => (
-    <div className="related-skeleton skeleton-card">
-      <div className="shimmer shimmer-img"></div>
-      <div className="shimmer-info">
-        <div className="shimmer shimmer-title"></div>
-        <div className="shimmer shimmer-subtitle"></div>
-        <div className="shimmer shimmer-price"></div>
-      </div>
-    </div>
-  );
-
   const addToCompare = (car) => {
     window.dispatchEvent(new CustomEvent("add-to-compare", { detail: car }));
   };
+
   // ✅ بطاقة سيارة ذات صلة
   const RelatedCarCard = ({ car }) => (
     <HashLink
@@ -124,7 +237,7 @@ export default function DetailsCar() {
     >
       <IoIosGitCompare
         onClick={(e) => {
-          e.stopPropagation();    
+          e.stopPropagation();
           e.preventDefault();
           addToCompare(car);
         }}
@@ -142,11 +255,21 @@ export default function DetailsCar() {
       </div>
     </HashLink>
   );
-  // دالة إضافة السيارة للمقارنة
 
-  // ✅ التحقق بعد كل الـ Hooks
+  // ============================================
+  // 🎨 عرض السكيلتون الكامل أثناء التحميل
+  // ============================================
   if (!dataCar) {
-    return <div className="loading-state">جاري تحميل تفاصيل السيارة...</div>;
+    return (
+      <div className="MainBoxdetails" id="detailsCar">
+        <div className="detailsCar" dir="rtl">
+          <HeaderSkeleton />
+          <ImageAndInfoSkeleton />
+          <FeaturesSkeleton />
+          <RelatedCarsSkeleton />
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -319,11 +442,25 @@ export default function DetailsCar() {
           </div>
 
           {loadingRelated ? (
-            <div className="related-cars-grid">
-              {[1, 2, 3, 4].map((n) => (
-                <RelatedCarSkeleton key={n} />
-              ))}
-            </div>
+            <>
+              {/* سكيلتون لمجموعات السيارات ذات الصلة */}
+              <div className="related-group">
+                <div className="shimmer shimmer-group-title"></div>
+                <div className="related-cars-grid">
+                  {[1, 2, 3, 4].map((n) => (
+                    <RelatedCarSkeleton key={n} />
+                  ))}
+                </div>
+              </div>
+              <div className="related-group">
+                <div className="shimmer shimmer-group-title"></div>
+                <div className="related-cars-grid">
+                  {[1, 2, 3].map((n) => (
+                    <RelatedCarSkeleton key={n} />
+                  ))}
+                </div>
+              </div>
+            </>
           ) : (
             <>
               {relatedCars.exactMatch.length > 0 && (
@@ -343,8 +480,6 @@ export default function DetailsCar() {
                 <div className="related-group">
                   <h4 className="related-group-title">
                     <span>{` ${dataCar.brand} / ${dataCar.model}`}</span>
-                    {/* <p>{dataCar.brand}</p>
-                    <p>{dataCar.model}</p> */}
                   </h4>
                   <div className="related-cars-grid">
                     {relatedCars.brandModel.map((car) => (

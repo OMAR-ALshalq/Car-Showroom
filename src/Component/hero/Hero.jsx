@@ -151,26 +151,90 @@ export default function Hero() {
 
   // End classification
   // Start Slider Brand
+  // const sliderBrandRef = useRef(null);
+  // const scrollBrand = (direction) => {
+  //   const { current } = sliderBrandRef;
+  //   const scrollAmount = 400;
+  //   if (direction === "left") {
+  //     current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  //   } else {
+  //     current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  //   }
+  // };
+  // استبدل الكود القديم الخاص بـ scrollBrand بهذا الكود
   const sliderBrandRef = useRef(null);
+
   const scrollBrand = (direction) => {
     const { current } = sliderBrandRef;
-    const scrollAmount = 400;
-    if (direction === "left") {
-      current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    if (!current) return;
+
+    // حساب مقدار التمرير: عرض بطاقة واحدة + المسافة بين البطاقات (gap)
+    const card = current.querySelector(".CardPartOne"); // أو '.CardWrapper'
+    const gap = 20; // نفس قيمة gap في CSS: gap: 20px
+
+    if (card) {
+      const cardWidth = card.offsetWidth;
+      const scrollAmount = cardWidth + gap;
+
+      if (direction === "left") {
+        current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      } else {
+        current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      }
     } else {
-      current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      // في حال لم يتم العثور على البطاقة، استخدم عرض الحاوية كبديل
+      const scrollAmount = current.clientWidth * 0.8; // 80% من العرض المرئي
+      if (direction === "left") {
+        current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      } else {
+        current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      }
     }
   };
   // End Slider Brand
   // Start Slider BodyType
+  // const scrollBodyTypeRef = useRef(null);
+  // const scrollBodytype = (direction) => {
+  //   const { current } = scrollBodyTypeRef;
+  //   const scrollAmount = 400;
+  //   if (direction === "left") {
+  //     current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  //   } else {
+  //     current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  //   }
+  // };
   const scrollBodyTypeRef = useRef(null);
+
   const scrollBodytype = (direction) => {
     const { current } = scrollBodyTypeRef;
-    const scrollAmount = 400;
-    if (direction === "left") {
-      current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    if (!current) return;
+
+    // البحث عن أول بطاقة من نوع CardBodyType داخل الحاوية
+    const card = current.querySelector(".CardBodyType");
+
+    if (card) {
+      // الحصول على عرض البطاقة الفعلي
+      const cardWidth = card.offsetWidth;
+
+      // الحصول على قيمة الـ gap من CSS (نفس القيمة المستخدمة في PartTowSectionFor)
+      const gap = 20; // gap: 20px من CSS
+
+      // مقدار التمرير = عرض بطاقة واحدة + المسافة
+      const scrollAmount = cardWidth + gap;
+
+      if (direction === "left") {
+        current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      } else {
+        current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      }
     } else {
-      current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      // في حالة عدم وجود البطاقات (احتياطي)
+      const fallbackScroll = current.clientWidth * 0.8;
+      if (direction === "left") {
+        current.scrollBy({ left: -fallbackScroll, behavior: "smooth" });
+      } else {
+        current.scrollBy({ left: fallbackScroll, behavior: "smooth" });
+      }
     }
   };
   // End Slider BodyType

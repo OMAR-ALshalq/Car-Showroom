@@ -86,7 +86,6 @@
   transform: translateY(0);
 }
 
-/* ✅ موبايل */
 @media (max-width: 600px) {
   .whatsapp-btn,
   .scroll-top-btn {

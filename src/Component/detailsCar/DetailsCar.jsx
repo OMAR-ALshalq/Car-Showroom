@@ -173,6 +173,7 @@ export default function DetailsCar() {
   // ✅ جلب سيارات ذات صلة
   useEffect(() => {
     if (!dataCar) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoadingRelated(true);
 
     const { brand, model, bodyType } = dataCar;

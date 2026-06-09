@@ -73,7 +73,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(0, 0, 0, 0.1)
+    rgba(158, 31, 31, 0.1)
   ); /* تم التغيير */
   transform: skewX(-20deg);
   animation: shine 2s infinite;
@@ -98,19 +98,19 @@
 
 .MainBoxdetails .detailsCar .BoxAddressPage .PriceCar a {
   font-size: 17px;
-  padding: 8px 15px;
+  padding: 3px 12px;
   display: flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  border: 2px solid var(--accent-text); /* تم التغيير: حدود بيضاء */
+  /* border: 2px solid var(--accent-text); تم التغيير: حدود بيضاء */
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   color: var(--accent-text); /* تم التغيير: نص أبيض */
-  background: transparent; /* تم التغيير: خلفية شفافة */
+  background: #25d366; /* تم التغيير: خلفية شفافة */
   transition: var(--transition);
   font-weight: 500;
 }

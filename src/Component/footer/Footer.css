@@ -136,7 +136,7 @@
   -o-transition: 0.3s;
   display: inline-block;
   font-size: 15px;
-  margin:  0 -15px 0 0;
+  margin: 0 -15px 0 0;
 }
 
 .MainBoxFooter .ContinerFooter .SectionTow .LinkSectionTow ul li a::before {
@@ -159,7 +159,13 @@
   -o-transform: translateX(-5px);
 }
 
-.MainBoxFooter .ContinerFooter .SectionTow .LinkSectionTow ul li a:hover::before {
+.MainBoxFooter
+  .ContinerFooter
+  .SectionTow
+  .LinkSectionTow
+  ul
+  li
+  a:hover::before {
   opacity: 1;
 }
 /* End SectionTow */
@@ -284,21 +290,19 @@
 }
 
 .MainBoxFooter .CopyRight .TextRight h5,
-.MainBoxFooter .CopyRight .TextLeft h5, 
+.MainBoxFooter .CopyRight .TextLeft h5,
 .MainBoxFooter .CopyRight .TextCaenter h5 {
   color: var(--accent-text); /* تم التغيير */
   font-size: 13px;
   font-weight: 400;
 }
 
-
-
 .MainBoxFooter .CopyRight .TextLeft {
   display: flex;
   justify-content: end;
 }
 
-.MainBoxFooter .CopyRight .TextCaenter{
+.MainBoxFooter .CopyRight .TextCaenter {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -391,7 +395,6 @@
     flex-direction: column;
     align-items: center;
   }
-  
 
   .MainBoxFooter .ContinerFooter {
     flex-direction: column;
@@ -420,6 +423,12 @@
   .MainBoxFooter .ContinerFooter .SectionTow h2,
   .MainBoxFooter .ContinerFooter .SectionThree h2 {
     font-size: 18px;
+  }
+  .MainBoxFooter .ContinerFooter {
+    text-align: start;
+  }
+  .MainBoxFooter .ContinerFooter .SectionOne .TextSectionOne{
+    text-align: center;
   }
 }
 /* End Media */

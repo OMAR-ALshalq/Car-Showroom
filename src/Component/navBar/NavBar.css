@@ -307,7 +307,7 @@
     font-size: 15px;
   }
   .BoxMainNavBar .IconNavBar {
-    gap: 0px;
+    gap: 3px;
   }
   .NavBarContiner .BoxMainNavBar .SearchNavBar {
     width: 150px;

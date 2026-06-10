@@ -1205,6 +1205,8 @@
     margin: 20px 0 20px 0;
     /* background: red; */
   }
+
+
   .SectionTow .SliderContainer .NewCar {
     display: flex;
     /* justify-content: center; */
@@ -1246,19 +1248,19 @@
   }
 
   .SectionTow .TitleSectionTow .Text {
-    width: 250px;
+    width: 60%;
     /* background: red; */
   }
   .SectionTow .TitleSectionTow .Text h3 {
-    font-size: 15px;
+    font-size: 14px;
   }
   .SectionTow .TitleSectionTow .Text p {
-    font-size: 12px;
+    font-size: 10px;
   }
   .SectionTow .TitleSectionTow .Link {
     /* background: red; */
     padding: 5px 12px;
-    font-size: 12px;
+    font-size: 10px;
     gap: 2px;
   }
 

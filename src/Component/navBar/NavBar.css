@@ -299,12 +299,15 @@
 }
 
 @media (max-width: 600px) {
+  .NavBarContiner .BoxMainNavBar {
+    margin: 0 9px 0 9px;
+  }
   .NavBarContiner .BoxMainNavBar .IconNavBar h2 {
     /* background: red; */
     font-size: 15px;
   }
   .BoxMainNavBar .IconNavBar {
-    gap: 10px;
+    gap: 0px;
   }
   .NavBarContiner .BoxMainNavBar .SearchNavBar {
     width: 150px;

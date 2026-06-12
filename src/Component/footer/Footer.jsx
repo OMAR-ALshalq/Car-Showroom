@@ -112,7 +112,7 @@ export default function Footer() {
             </div>
             <div className="TextPartThree">
               <h4>الهاتف</h4>
-              <p>+9639468752369</p>
+              <p>963982359538+</p>
             </div>
           </div>
         </div>

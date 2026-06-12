@@ -7,7 +7,38 @@ export default function CompareModal({ cars, onClose }) {
     document.body.classList.add("compare-modal-open");
     return () => document.body.classList.remove("compare-modal-open");
   }, []);
+
+  useEffect(() => {
+    // ✅ تشخيص البيانات
+    if (cars && cars.length > 0) {
+      console.log("🚗 CompareModal - cars data:", cars);
+      cars.forEach((car, index) => {
+        console.log(`🚙 Car ${index + 1}:`, {
+          _id: car._id,
+          color: car.color,
+          bodyType: car.bodyType,
+          status: car.status,
+          "All keys": Object.keys(car)
+        });
+      });
+    }
+  }, [cars]);
+
   if (!cars || cars.length < 2) return null;
+
+  // ✅ دالة آمنة لاستخراج القيمة
+  // eslint-disable-next-line no-unused-vars
+  const safeValue = (car, path, fallback = "N/A") => {
+    if (!car) return fallback;
+
+    // محاولة الوصول المباشر
+    if (path.includes(".")) {
+      const [parent, child] = path.split(".");
+      return car[parent]?.[child] || car[child] || fallback;
+    }
+
+    return car[path] || car[path]?.toString() || fallback;
+  };
 
   return (
     <div className="compare-modal-overlay" onClick={onClose}>
@@ -40,24 +71,53 @@ export default function CompareModal({ cars, onClose }) {
             </thead>
             <tbody>
               {[
-                ["السعر", (c) => `$${c.price?.toLocaleString()}`],
-                ["السنة", (c) => c.year],
-                ["الممشى", (c) => `${c.mileage?.value} ${c.mileage?.unit}`],
-                ["اللون", (c) => c.color],
+                [
+                  "السعر",
+                  (c) => (c.price ? `$${c.price.toLocaleString()}` : "N/A")
+                ],
+                ["السنة", (c) => c.year || "N/A"],
+                [
+                  "الممشى",
+                  (c) =>
+                    c.mileage?.value
+                      ? `${c.mileage.value} ${c.mileage?.unit || "km"}`
+                      : "N/A"
+                ],
+                ["اللون", (c) => c.color || c.colour || "N/A"],
                 [
                   "ناقل الحركة",
                   (c) =>
                     c.engine?.transmission === "automatic"
                       ? "أوتوماتيك"
-                      : "عادي"
+                      : c.engine?.transmission === "normal"
+                        ? "عادي"
+                        : c.engine?.transmission || "N/A"
                 ],
-                ["نوع الوقود", (c) => c.engine?.fulType],
-                ["الحصان", (c) => `${c.engine?.horsepower} HP`],
-                ["سعة المحرك", (c) => `${c.engine?.capacityLitre}L`],
-                ["الشكل", (c) => c.bodyType],
+                [
+                  "نوع الوقود",
+                  (c) => c.engine?.fuelType || c.engine?.fulType || "N/A"
+                ],
+                [
+                  "الحصان",
+                  (c) =>
+                    c.engine?.horsepower ? `${c.engine.horsepower} HP` : "N/A"
+                ],
+                [
+                  "سعة المحرك",
+                  (c) =>
+                    c.engine?.capacityLitre
+                      ? `${c.engine.capacityLitre}L`
+                      : "N/A"
+                ],
+                ["الشكل", (c) => c.bodyType || c.bodytype || "N/A"],
                 [
                   "الحالة",
-                  (c) => (c.status === "available" ? "✅ متوفرة" : "❌ مباعة")
+                  (c) =>
+                    c.status === "available"
+                      ? "✅ متوفرة"
+                      : c.status === "sold"
+                        ? "❌ مباعة"
+                        : c.status || "N/A"
                 ]
               ].map(([label, fn]) => (
                 <tr key={label}>

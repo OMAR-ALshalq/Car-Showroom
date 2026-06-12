@@ -56,7 +56,7 @@ export default function Contact() {
               <h4>تابعنا على مواقع التواصل الاجتماعي</h4>
               <div className="BoxUrlSocial">
                 <a
-                  href="https://www.facebook.com/Omar Alshalak"
+                  href="https://www.facebook.com/omar.alshalak.7"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

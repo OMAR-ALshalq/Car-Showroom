@@ -50,13 +50,6 @@ export default function AllCar() {
       .get(`${API_URL}/api/cars`)
       .then((res) => {
         setAllcar(res.data);
-        if (res.data && res.data.length > 0) {
-          console.log("🚗 First car from API:", res.data[0]);
-          console.log("🔑 Keys:", Object.keys(res.data[0]));
-          console.log("🎨 color:", res.data[0].color);
-          console.log("🚙 bodyType:", res.data[0].bodyType);
-          console.log("📊 status:", res.data[0].status);
-        }
         sessionStorage.setItem("allCars", JSON.stringify(res.data));
         setLoading(false);
       })

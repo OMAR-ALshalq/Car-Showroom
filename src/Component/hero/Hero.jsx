@@ -245,8 +245,17 @@ export default function Hero() {
   // End Select Brand SectionOne
 
   // دالة إضافة السيارة للمقارنة
-  const addToCompare = (car) => {
-    window.dispatchEvent(new CustomEvent("add-to-compare", { detail: car }));
+const addToCompare = async (car) => {
+    try {
+      const res = await axios.get(`${API_URL}/api/cars/${car._id}`);
+      const fullCar = res.data;
+      window.dispatchEvent(
+        new CustomEvent("add-to-compare", { detail: fullCar })
+      );
+    } catch (err) {
+      console.error("Error fetching full car data:", err);
+      window.dispatchEvent(new CustomEvent("add-to-compare", { detail: car }));
+    }
   };
 
   // ============================================

@@ -1,5 +1,7 @@
 import "./Contact.css";
-import SEO from "../seo/SEO"
+import SEO from "../seo/SEO";
+import { useState } from "react";
+import { showSuccess, showError } from "../toast/Toast";
 // Icon
 import { VscCallOutgoing } from "react-icons/vsc";
 import { HiOutlineMail } from "react-icons/hi";
@@ -8,8 +10,77 @@ import { SlSocialFacebook } from "react-icons/sl";
 import { BsWhatsapp } from "react-icons/bs";
 import { SlSocialInstagram } from "react-icons/sl";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { FaSpinner } from "react-icons/fa";
+
+// ⚠️ استبدل هذه بالقيم الخاصة بك من EmailJS
+const EMAILJS_PUBLIC_KEY = "q1NS15pvkXyOQjQPb";
+const EMAILJS_SERVICE_ID = "service_ivcdjf7";
+const EMAILJS_TEMPLATE_ID = "template_nv6yqig";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+  const [sending, setSending] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!formData.name.trim()) {
+      showError("الرجاء إدخال الاسم الكامل", "حقل فارغ");
+      return;
+    }
+    if (!formData.email.trim()) {
+      showError("الرجاء إدخال الايميل", "حقل فارغ");
+      return;
+    }
+    if (!formData.message.trim()) {
+      showError("الرجاء كتابة الرسالة", "حقل فارغ");
+      return;
+    }
+
+    setSending(true);
+
+    try {
+      const response = await fetch(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            service_id: EMAILJS_SERVICE_ID,
+            template_id: EMAILJS_TEMPLATE_ID,
+            user_id: EMAILJS_PUBLIC_KEY,
+            template_params: {
+              from_name: formData.name,
+              from_email: formData.email,
+              message: formData.message
+            }
+          })
+        }
+      );
+
+      if (response.ok) {
+        showSuccess("تم إرسال رسالتك بنجاح، سنتواصل معك قريباً");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        showError("فشل إرسال الرسالة، حاول مرة أخرى");
+      }
+    // eslint-disable-next-line no-unused-vars
+    } catch (error) {
+      showError("حدث خطأ في الاتصال، تأكد من اتصالك بالإنترنت");
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
     <div className="MainBoxConatct" id="contact">
       <SEO
@@ -34,21 +105,29 @@ export default function Contact() {
                 <VscCallOutgoing className="IconPhone" />
                 <div className="TextPhone">
                   <h5>اتصل بنا هاتفيا</h5>
-                  <a href="">963982359538+</a>
+                  <a href="tel:+963982359538">963982359538+</a>
                 </div>
               </div>
               <div className="Email">
                 <HiOutlineMail className="IconEmail" />
                 <div className="TextEmail">
                   <h5>أرسل لنا رسالة</h5>
-                  <a href="">omaralshalq@gmail.com</a>
+                  <a href="mailto:omaralshalq@gmail.com">
+                    omaralshalq@gmail.com
+                  </a>
                 </div>
               </div>
               <div className="Location">
                 <RiUserLocationFill className="IconLocation" />
                 <div className="TextLocation">
                   <h5>الموقع</h5>
-                  <a href="">دمشق ,اوتسراد المزة</a>
+                  <a
+                    href="https://maps.google.com/?q=دمشق,اوتسراد المزة"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    دمشق ,اوتسراد المزة
+                  </a>
                 </div>
               </div>
             </div>
@@ -82,26 +161,50 @@ export default function Contact() {
           <div className="FormEmail">
             <div className="BoxMessage">
               <div className="TitleBoxMessage">
-                <h4>نرحكب بمساعدتكم!</h4>
+                <h4>نرحب بمساعدتكم!</h4>
                 <p>
                   سيتم التواصل معكم في ساعات العمل من 9 صباحا حتى الخامسة مساء
                   من الأحد للخميس.
                 </p>
               </div>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="NameUser">
                   <label>الاسم الكامل:</label>
-                  <input type="text"></input>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className="EmailUser">
                   <label>الايميل:</label>
-                  <input type="email"></input>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className="TextMessag">
-                  <textarea placeholder="اكتب الرسالة"></textarea>
+                  <textarea
+                    name="message"
+                    placeholder="اكتب الرسالة"
+                    value={formData.message}
+                    onChange={handleChange}
+                  ></textarea>
                 </div>
 
-                <button type="submit">ارسال</button>
+                <button type="submit" disabled={sending}>
+                  {sending ? (
+                    <div className="Loding">
+                      جاري الإرسال
+                      <FaSpinner className="spinner-icon" />
+                    </div>
+                  ) : (
+                    "ارسال"
+                  )}
+                </button>
               </form>
             </div>
           </div>
@@ -123,13 +226,11 @@ export default function Contact() {
           </div>
           <div className="MapLocation">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6151.930829327943!2d36.24356847027653!3d33.49321016936578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518dfb6eecc799f%3A0x352f1304cb595797!2zQUwgTUFMSUggTU9UT1JTINmF2K3ZhdivINin2YTZhdmE2YrYrSDZhdmI2KrZiNix2LI!5e0!3m2!1sar!2sde!4v1778503032523!5m2!1sar!2sde" // تأكد من وضع الرابط الصحيح هنا
-              style={{
-                border: 0
-              }} /* في React الـ style يكون Object وليس String */
-              allowFullScreen /* تحولت من allowfullscreen إلى allowFullScreen */
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6151.930829327943!2d36.24356847027653!3d33.49321016936578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518dfb6eecc799f%3A0x352f1304cb595797!2zQUwgTUFMSUggTU9UT1JTINmF2K3ZhdivINin2YTZhdmE2YrYrSDZhdmI2KrZiNix2LI!5e0!3m2!1sar!2sde!4v1778503032523!5m2!1sar!2sde"
+              style={{ border: 0 }}
+              allowFullScreen
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade" /* تحولت من referrerpolicy إلى referrerPolicy */
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>

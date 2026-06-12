@@ -86,7 +86,7 @@ export default function AllCar() {
   const [selectedBodyType, setSelectedBodyType] = useState(bodyTypeFromUrl);
   const [maxPrice, setMaxPrice] = useState("");
 
-  // ✅ مزامنة searchTerm + تحديد Radio Button
+  //  مزامنة searchTerm + تحديد Radio Button
   useEffect(() => {
     setSearchTerm(searchFromUrl);
     if (searchFromUrl && uniqueBrands.length > 0) {

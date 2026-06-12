@@ -34,7 +34,7 @@ export default function Contact() {
                 <VscCallOutgoing className="IconPhone" />
                 <div className="TextPhone">
                   <h5>اتصل بنا هاتفيا</h5>
-                  <a href="">+96354875235</a>
+                  <a href="">963982359538+</a>
                 </div>
               </div>
               <div className="Email">
@@ -48,20 +48,32 @@ export default function Contact() {
                 <RiUserLocationFill className="IconLocation" />
                 <div className="TextLocation">
                   <h5>الموقع</h5>
-                  <a href="">دمشق ,اوتسراد المزة , مقابل وزارة الاتصالات</a>
+                  <a href="">دمشق ,اوتسراد المزة</a>
                 </div>
               </div>
             </div>
             <div className="BoxSocial">
               <h4>تابعنا على مواقع التواصل الاجتماعي</h4>
               <div className="BoxUrlSocial">
-                <a href="">
+                <a
+                  href="https://www.facebook.com/Omar Alshalak"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <SlSocialFacebook />
                 </a>
-                <a href="">
+                <a
+                  href="https://wa.me/963982359538"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <BsWhatsapp />
                 </a>
-                <a href="">
+                <a
+                  href="https://www.instagram.com/oalshalak"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <SlSocialInstagram />
                 </a>
               </div>

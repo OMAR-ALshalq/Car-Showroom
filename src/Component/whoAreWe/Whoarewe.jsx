@@ -36,7 +36,7 @@ export default function Whoarewe() {
               <GiStarShuriken />
             </div>
             <h3>
-              <span>قصة</span> AlmalihMotors
+              <span>قصة</span> CarShowRoom
             </h3>
             <p>
               في عام 2026، ظهرت فكرة تحويل سوق السيارات التقليدي إلى تجربة رقمية

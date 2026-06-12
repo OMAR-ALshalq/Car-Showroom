@@ -17,21 +17,33 @@ export default function Footer() {
       <div className="ContinerFooter" dir="rtl">
         <div className="SectionOne">
           <div className="TextSectionOne">
-            <h2>AlmalihMotors</h2>
+            <h2>CarShowRoom</h2>
             <p>
-              مكتب المليح يقدم تنوع رائع في السيارات بمختلف فئاتها و انواعها ,كما
-              يقدم التصفح السريع للسيارات المتوفرة في المكتب ويقدم ايضا السرعة و
+              يقدم تنوع رائع في السيارات بمختلف فئاتها و انواعها ,كما يقدم
+              التصفح السريع للسيارات المتوفرة في المكتب ويقدم ايضا السرعة و
               الموثوقية في عمليات البيع و الشراء
             </p>
           </div>
           <div className="LinkSocialMedia">
-            <a href="">
+            <a
+              href="https://www.facebook.com/Omar Alshalak"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <SlSocialFacebook className="IconSocialMedia" />
             </a>
-            <a href="">
+            <a
+              href="https://www.instagram.com/oalshalak"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <SlSocialInstagram className="IconSocialMedia" />
             </a>
-            <a href="">
+            <a
+              href="https://wa.me/963982359538"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <BsWhatsapp className="IconSocialMedia" />
             </a>
           </div>
@@ -82,7 +94,7 @@ export default function Footer() {
             </div>
             <div className="TextPartOne">
               <h4>العنوان</h4>
-              <p>دمشق ,اوتسراد المزة , مقابل وزارة الاتصالات</p>
+              <p>دمشق ,اوتسراد المزة </p>
             </div>
           </div>
           <div className="PartTow">
@@ -121,7 +133,7 @@ export default function Footer() {
         <div className="TextRight">
           <h3>&copy;</h3>
           <h5>2026</h5>
-          <h3>AlmalihMotors</h3>
+          <h3>CarShowRoom</h3>
           <h5>جميع الحقوق محفوظة</h5>
         </div>
         <div className="TextLeft">

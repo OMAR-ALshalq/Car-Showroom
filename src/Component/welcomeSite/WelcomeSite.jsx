@@ -45,8 +45,8 @@ export default function WelcomeSite({ onFinish }) {
         </div>
 
         <h1 className="welcome-site-brand">
-          <span>ALMALIH</span>
-          <span>MOTORS</span>
+          <span>Car</span>
+          <span>Showroom</span>
         </h1>
         <p className="welcome-site-subtitle">وجهتك الأولى لشراء السيارات</p>
 

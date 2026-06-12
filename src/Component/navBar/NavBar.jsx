@@ -59,7 +59,7 @@ useEffect(() => {
       <div className="continer NavBarContiner" dir="rtl">
         <div className="BoxMainNavBar">
           <div className="IconNavBar">
-            <h2>AlmalihMotors</h2>
+            <h2>CarShowRoom</h2>
             <div className="DarkMod" onClick={() => setIsDark(!isDark)}>
               {isDark ? (
                 <GoSun /> // تظهر أيقونة الشمس عندما يكون الوضع داكناً للعودة للفاتح

@@ -1,6 +1,6 @@
 import "./CompareBar.css";
 import { useState, useEffect } from "react";
-import { FaTimes, FaExchangeAlt, FaCheck } from "react-icons/fa";
+import { FaTimes, FaExchangeAlt } from "react-icons/fa";
 
 // ✅ استخدم localStorage لتخزين السيارات المختارة
 const STORAGE_KEY = "compare-cars";

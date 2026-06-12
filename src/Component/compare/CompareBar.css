@@ -144,3 +144,32 @@
   .compare-bar-cars { flex-wrap: wrap; justify-content: center; }
   .compare-bar-actions { width: 100%; justify-content: center; }
 }
+
+
+.compare-bar-car.loading-car {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  border: 2px dashed #ccc;
+}
+
+.car-loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: #666;
+  font-size: 12px;
+}
+
+.car-loading-spinner .spinner-icon {
+  animation: spin 1s linear infinite;
+  font-size: 20px;
+  color: #007bff;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

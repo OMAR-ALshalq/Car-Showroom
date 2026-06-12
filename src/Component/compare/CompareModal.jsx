@@ -8,37 +8,7 @@ export default function CompareModal({ cars, onClose }) {
     return () => document.body.classList.remove("compare-modal-open");
   }, []);
 
-  useEffect(() => {
-    // ✅ تشخيص البيانات
-    if (cars && cars.length > 0) {
-      console.log("🚗 CompareModal - cars data:", cars);
-      cars.forEach((car, index) => {
-        console.log(`🚙 Car ${index + 1}:`, {
-          _id: car._id,
-          color: car.color,
-          bodyType: car.bodyType,
-          status: car.status,
-          "All keys": Object.keys(car)
-        });
-      });
-    }
-  }, [cars]);
-
   if (!cars || cars.length < 2) return null;
-
-  // ✅ دالة آمنة لاستخراج القيمة
-  // eslint-disable-next-line no-unused-vars
-  const safeValue = (car, path, fallback = "N/A") => {
-    if (!car) return fallback;
-
-    // محاولة الوصول المباشر
-    if (path.includes(".")) {
-      const [parent, child] = path.split(".");
-      return car[parent]?.[child] || car[child] || fallback;
-    }
-
-    return car[path] || car[path]?.toString() || fallback;
-  };
 
   return (
     <div className="compare-modal-overlay" onClick={onClose}>

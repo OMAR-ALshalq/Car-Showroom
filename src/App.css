@@ -142,3 +142,11 @@ p {
     height: 10px;
   }
 }
+
+
+/* ✅ امنع المتصفحات من فرض ألوانها على الموقع */
+@media (forced-colors: active) {
+  body {
+    forced-color-adjust: none;
+  }
+}

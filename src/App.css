@@ -151,5 +151,6 @@ p {
 }
 
 html {
-  color-scheme: light dark;
+  forced-color-adjust: none;
+  background-color: var(--bg-primary);
 }

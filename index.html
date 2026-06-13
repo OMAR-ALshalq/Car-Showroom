@@ -1,28 +1,62 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- <meta name="color-scheme" content="light dark only" /> -->
-    <meta name="color-scheme" content="light dark" />
-
     <meta charset="UTF-8" />
-   
 
     <script>
-  (function() {
-    // 1. تحديد السمة (يدوياً أو حسب النظام)
-    var theme = localStorage.getItem('site-theme');
-    if (!theme) {
-      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    document.documentElement.setAttribute('data-theme', theme);
+      (function () {
+        // 1. تحديد السمة (يدوي > إعدادات الجهاز)
+        var theme = localStorage.getItem("site-theme");
+        if (!theme) {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
 
-    // 2. تغيير meta color-scheme ليطابق السمة الفعلية
-    var meta = document.querySelector('meta[name="color-scheme"]');
-    if (meta) {
-      meta.setAttribute('content', theme);   // يصبح "dark" أو "light" فقط
-    }
-  })();
-</script>
+        // 2. منع فلتر الألوان القسري من سامسونج (خاصية مهمة)
+        document.documentElement.style.setProperty(
+          "forced-color-adjust",
+          "none",
+          "important"
+        );
+
+        // 3. ضبط خلفية داكنة فوراً إن كانت السمة dark (تجنباً للوميض الأبيض)
+        if (theme === "dark") {
+          document.documentElement.style.setProperty(
+            "background-color",
+            "#121212",
+            "important"
+          );
+        }
+
+        // 4. إنشاء meta "color-scheme" ديناميكي بالقيمة الصحيحة (dark/light)
+        //    هذا يمنع المتصفح من تطبيق وضعه الداكن القسري لأنه سيرى "dark" في الميتا.
+        var meta = document.createElement("meta");
+        meta.name = "color-scheme";
+        meta.content = theme; // "dark" أو "light"
+        document.head.appendChild(meta);
+
+        // 5. استمع لتغييرات النظام (فقط في حال عدم وجود اختيار يدوي)
+        window
+          .matchMedia("(prefers-color-scheme: dark)")
+          .addEventListener("change", function (e) {
+            if (!localStorage.getItem("site-theme")) {
+              var newTheme = e.matches ? "dark" : "light";
+              document.documentElement.setAttribute("data-theme", newTheme);
+              // حدّث الميتا أيضاً
+              var metaTag = document.querySelector('meta[name="color-scheme"]');
+              if (metaTag) metaTag.content = newTheme;
+              // اضبط الخلفية
+              document.documentElement.style.setProperty(
+                "background-color",
+                newTheme === "dark" ? "#121212" : "",
+                "important"
+              );
+            }
+          });
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/logo-car.svg" />
     <link
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Inter:wght@300;400;600;800&display=swap"

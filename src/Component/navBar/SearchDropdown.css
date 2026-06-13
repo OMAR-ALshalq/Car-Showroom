@@ -149,5 +149,29 @@
   .search-input-wrapper input {
     /* background: green; */
     width: 90%;
+    /* font-size: 14px; */
   }
+
+  .search-input-wrapper input::placeholder {
+    font-size: 12px;
+    /* color: black; */
+  }
+
+  .search-input-wrapper {
+  display: flex;
+  align-items: center;
+  /*background: var(--bg-primary);
+  */border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 4px 10px;
+  margin: 0 7px 0 0;
+  gap: 8px;
+  transition: 0.3s;
+  width: 80%;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  /* background: red; */
+}
 }

@@ -318,11 +318,11 @@
 }
 
   .NavBarContiner .BoxMainNavBar {
-    margin: 0 9px 0 9px;
+    margin: 0 20px 0 20px;
   }
   .NavBarContiner .BoxMainNavBar .IconNavBar h2 {
     /* background: red; */
-    font-size: 15px;
+    font-size: 12px;
   }
   .BoxMainNavBar .IconNavBar {
     gap: 3px;

@@ -152,11 +152,5 @@ p {
 
 html {
   forced-color-adjust: none;
-  background-color: var(--bg-primary);
 }
 
-/* إخفاء زر التبديل عندما يفرض المتصفح الوضع الداكن */
-html.forced-dark-active .DarkMod {
-  display: none !important;
-  /* أو pointer-events: none; opacity: 0.5; مع إضافة title */
-}

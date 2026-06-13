@@ -2,7 +2,7 @@ import "./NavBar.css";
 import SearchDropdown from "./SearchDropdown";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 // Icon
@@ -15,27 +15,33 @@ import { GrClose } from "react-icons/gr";
 export default function NavBar() {
   // start DarkMod
   const [isDark, setIsDark] = useState(() => {
-    const savedTheme = localStorage.getItem("site-theme");
-    if (savedTheme) return savedTheme === "dark";
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const saved = localStorage.getItem("site-theme");
+    if (saved) return saved === "dark";
+    return document.documentElement.getAttribute("data-theme") === "dark";
   });
 
-  // تطبيق السمة على العنصر الجذر عند تغير isDark (ولكن بدون حفظ تلقائي)
-  useEffect(() => {
-    const theme = isDark ? "dark" : "light";
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [isDark]);
-
-  // استمع لتغييرات إعدادات الجهاز فقط إذا لم يختر المستخدم يدوياً
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleChange = (e) => {
-      if (!localStorage.getItem("site-theme")) {
-        setIsDark(e.matches);
+  // تبديل السمة (يحفظ يدوياً فقط) - هذه هي الدالة الوحيدة
+  const toggleTheme = useCallback(() => {
+    setIsDark((prev) => {
+      const newTheme = !prev;
+      const themeStr = newTheme ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", themeStr);
+      localStorage.setItem("site-theme", themeStr);
+      // تحديث style الفوري على <html> لضمان التوافق
+      if (newTheme) {
+        document.documentElement.style.colorScheme = "dark";
+        document.documentElement.style.backgroundColor = "#121212";
+        document.documentElement.style.color = "#E9ECEF";
+      } else {
+        document.documentElement.style.colorScheme = "light";
+        document.documentElement.style.backgroundColor = "#F8F9FA";
+        document.documentElement.style.color = "#212529";
       }
-    };
-    mediaQuery.addEventListener("change", handleChange);
-    return () => mediaQuery.removeEventListener("change", handleChange);
+      // تحديث meta
+      const meta = document.querySelector('meta[name="color-scheme"]');
+      if (meta) meta.content = themeStr;
+      return newTheme;
+    });
   }, []);
   // End DarkMod
 
@@ -64,16 +70,6 @@ export default function NavBar() {
     setAnimation("hide");
   }
   //End ShowListTag
-
-  // دالة التبديل اليدوي (تحفظ اختيار المستخدم)
-  function toggleTheme() {
-    setIsDark((prev) => {
-      const newTheme = !prev;
-      const themeStr = newTheme ? "dark" : "light";
-      localStorage.setItem("site-theme", themeStr);
-      return newTheme;
-    });
-  }
 
   return (
     <div className="Box">

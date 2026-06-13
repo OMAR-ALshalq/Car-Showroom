@@ -2,104 +2,49 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!--Start DarkMod -->
+    <!-- ========== إعدادات السمة الفورية (قبل أي رسم) ========== -->
+<script>
+  (function() {
+    // 1. تحديد السمة: اختيار المستخدم > إعداد النظام
+    var theme = localStorage.getItem('site-theme');
+    if (!theme) {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', theme);
 
-    <script>
-      (function () {
-        // ---- الكشف عن forced dark mode ----
-        var testDiv = document.createElement("div");
-        testDiv.style.cssText =
-          "position:absolute;top:-999px;width:1px;height:1px;background:#ffffff;color:#ffffff;";
-        document.body.appendChild(testDiv);
-        var compStyle = getComputedStyle(testDiv);
-        var bgColor = compStyle.backgroundColor;
-        var textColor = compStyle.color;
-        document.body.removeChild(testDiv);
+    // 2. إعدادات فورية تمنع تدخل Samsung Internet
+    if (theme === 'dark') {
+      // إخبار المتصفح بأن الصفحة داكنة فعلاً (يمنع الفلتر القسري)
+      document.documentElement.style.colorScheme = 'dark';
+      document.documentElement.style.backgroundColor = '#121212'; // خلفية داكنة فورية
+      document.documentElement.style.color = '#E9ECEF';           // نص فوري بلونك
+    } else {
+      document.documentElement.style.colorScheme = 'light';
+      document.documentElement.style.backgroundColor = '#F8F9FA';
+      document.documentElement.style.color = '#212529';
+    }
+    // تعطيل أي فلتر إضافي
+    document.documentElement.style.forcedColorAdjust = 'none';
 
-        // دالة لتحويل rgb إلى hex للمقارنة
-        function rgbToHex(rgb) {
-          if (!rgb || rgb === "rgba(0, 0, 0, 0)") return "";
-          var nums = rgb.match(/\d+/g);
-          if (!nums || nums.length < 3) return "";
-          return (
-            "#" +
-            nums
-              .slice(0, 3)
-              .map(function (x) {
-                var hex = parseInt(x).toString(16);
-                return hex.length === 1 ? "0" + hex : hex;
-              })
-              .join("")
-          );
-        }
+    // 3. إنشاء meta color-scheme ديناميكي
+    var meta = document.createElement('meta');
+    meta.name = 'color-scheme';
+    meta.content = theme; // 'dark' أو 'light'
+    document.head.prepend(meta); // يُدرَج قبل أي شيء آخر
+  })();
+</script>
 
-        var bgHex = rgbToHex(bgColor);
-        var textHex = rgbToHex(textColor);
-        var expectedWhite = "#ffffff";
+<!-- ========== منع الوميض أثناء تحميل CSS ========== -->
+<style id="anti-flash">
+  /* قواعد مؤقتة تُطبق فوراً لمنع ظهور الخلفية الفاتحة */
+  html { background-color: var(--bg-primary, #121212); color: var(--text-primary, #E9ECEF); }
+  /* هذه المتغيرات ستعمل لأننا وضعناها ك inline style أعلاه، 
+     لكن في حال عدم دعمها نكرر الألوان مباشرة */
+</style>
 
-        // forced dark mode مفعّل إذا تغير لون الخلفية أو النص عن الأبيض بشكل كبير
-        var forcedDark =
-          bgHex.toLowerCase() !== expectedWhite ||
-          textHex.toLowerCase() !== expectedWhite;
-        // -----------------------------------
-
-        var theme = localStorage.getItem("site-theme");
-
-        if (forcedDark) {
-          // المتصفح يفرض وضعًا داكنًا، نلغي أي تفضيل فاتح ونستخدم الداكن فقط
-          theme = "dark";
-          // نمنع المستخدم من الحفظ اليدوي للفاتح عبر إزالة أي قيمة قديمة
-          localStorage.setItem("site-theme", "dark");
-          // نجعل الـ meta dark only
-          var meta = document.createElement("meta");
-          meta.name = "color-scheme";
-          meta.content = "dark only";
-          document.head.appendChild(meta);
-          // نخفي زر التبديل لاحقًا عبر CSS متغير (سنضيف class)
-          document.documentElement.classList.add("forced-dark-active");
-        } else {
-          // الحالة الطبيعية
-          if (!theme) {
-            theme = window.matchMedia("(prefers-color-scheme: dark)").matches
-              ? "dark"
-              : "light";
-          }
-          // إنشاء meta عادي
-          var meta = document.createElement("meta");
-          meta.name = "color-scheme";
-          meta.content = theme;
-          document.head.appendChild(meta);
-        }
-
-        document.documentElement.setAttribute("data-theme", theme);
-
-        // خلفية طارئة لمنع الوميض
-        if (theme === "dark") {
-          document.documentElement.style.setProperty(
-            "background-color",
-            "#121212",
-            "important"
-          );
-          document.documentElement.style.setProperty(
-            "color",
-            "#ffffff",
-            "important"
-          );
-        }
-
-        // استجابة لتغييرات النظام
-        window
-          .matchMedia("(prefers-color-scheme: dark)")
-          .addEventListener("change", function (e) {
-            if (forcedDark) return; // لا نغير شيء في forced dark
-            if (!localStorage.getItem("site-theme")) {
-              var newTheme = e.matches ? "dark" : "light";
-              document.documentElement.setAttribute("data-theme", newTheme);
-              var metaTag = document.querySelector('meta[name="color-scheme"]');
-              if (metaTag) metaTag.content = newTheme;
-            }
-          });
-      })();
-    </script>
+<!-- الآن تأتي روابط الخطوط وملف CSS الرئيسي -->
+    <!--End DarkMod -->
     <link rel="icon" type="image/svg+xml" href="/logo-car.svg" />
     <link
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Inter:wght@300;400;600;800&display=swap"
@@ -144,6 +89,13 @@
         ]
       }
     </script>
+    <script>
+  window.addEventListener("pagehide", function(event) {
+    if (!event.persisted) {
+      localStorage.removeItem("site-theme");
+    }
+  });
+</script>
   </head>
   <body>
     <div id="root"></div>

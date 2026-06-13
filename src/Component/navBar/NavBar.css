@@ -299,6 +299,24 @@
 }
 
 @media (max-width: 600px) {
+
+  .NavBarContiner {
+  position: fixed;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  padding: 10px 0 10px 0;
+  box-shadow: var(--shadow-md);
+  background: var(--bg-secondary); /* تم التغيير: استخدام خلفية ثانوية أنظف */
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  z-index: 900;
+  border-bottom: 1px solid var(--border-color); /* إضافة حد سفلي رفيع */
+}
+
   .NavBarContiner .BoxMainNavBar {
     margin: 0 9px 0 9px;
   }

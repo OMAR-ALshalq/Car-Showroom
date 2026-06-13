@@ -110,6 +110,3 @@ code {
   background: var(--code-bg);
 } */
 /* ✅ امنع المتصفح من عكس الألوان */
-html {
-  color-scheme: light dark;
-}

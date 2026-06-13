@@ -26,6 +26,10 @@
 
 } */
 
+:root {
+    color-scheme: light dark;
+
+}
 
 [data-theme="light"] {
    /* ألوان الخلفيات - Light Mode */
@@ -148,10 +152,8 @@ p {
   }
 }
 
-
-/* ✅ امنع المتصفحات من فرض ألوانها على الموقع */
-@media (forced-colors: active) {
-  body {
-    forced-color-adjust: none;
-  }
+html {
+  color-scheme: light dark;
 }
+
+

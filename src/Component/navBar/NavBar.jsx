@@ -15,17 +15,15 @@ import { GrClose } from "react-icons/gr";
 export default function NavBar() {
   // start DarkMod
 const [isDark, setIsDark] = useState(() => {
-  const savedTheme = sessionStorage.getItem("site-theme"); // ✅ sessionStorage
-  if (savedTheme) {
-    return savedTheme === "dark";
-  }
+  const savedTheme = localStorage.getItem("site-theme"); // ✅ localStorage
+  if (savedTheme) return savedTheme === "dark";
   return window.matchMedia("(prefers-color-scheme: dark)").matches;
 });
 
 useEffect(() => {
   const theme = isDark ? "dark" : "light";
   document.documentElement.setAttribute("data-theme", theme);
-  sessionStorage.setItem("site-theme", theme); // ✅ sessionStorage
+  localStorage.setItem("site-theme", theme); // ✅ localStorage
 }, [isDark]);
   // End DarkMod
 

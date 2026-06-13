@@ -15,7 +15,7 @@ export default function Whoarewe() {
     <div className="MainBoxWhoarewe" id="Whoarewe">
       <SEO
         title="من نحن"
-        description="Almalih Motors - شركة رائدة في تجارة السيارات الإلكترونية في سوريا"
+        description="CarShowRoom - شركة رائدة في تجارة السيارات الإلكترونية في سوريا"
       />
       <div className="ContinerWhoarewe" dir="rtl">
         <div className="TitleWhoarewe">

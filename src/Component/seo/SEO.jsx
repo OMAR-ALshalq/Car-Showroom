@@ -1,15 +1,15 @@
 import { Helmet } from "react-helmet-async";
 
 export default function SEO({
-  title = "Almalih Motors",
+  title = "CarShowRoom",
   description = "وجهتك الأولى لشراء السيارات - أفضل الأسعار وأحدث الموديلات",
-  keywords = "سيارات, شراء سيارات, سوريا, سيارات للبيع, Almalih Motors,أسعار سيارات تويوتا 2024 في سوريا",
+  keywords = "سيارات, شراء سيارات, سوريا, سيارات للبيع, CarShowRoom,أسعار سيارات تويوتا 2024 في سوريا",
   image = "/image/imgMain.jpg",
   url = "https://almalih-motors.com"
 }) {
-  const fullTitle = title.includes("Almalih")
+  const fullTitle = title.includes("CarShowRoom")
     ? title
-    : `${title} | Almalih Motors`;
+    : `${title} | CarShowRoom`;
 
   return (
     <Helmet>

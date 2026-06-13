@@ -366,7 +366,7 @@ const addToCompare = async (car) => {
     <div className="Box">
       <SEO
         title="الرئيسية"
-        description="اكتشف أحدث السيارات الجديدة في سوريا - Almalih Motors"
+        description="اكتشف أحدث السيارات الجديدة في سوريا - CarShowRoom"
       />
       <div className="continer HeroContiner">
         <div className="SpacSection" id="mainpaig"></div>

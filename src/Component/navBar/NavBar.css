@@ -1,3 +1,5 @@
+/* ==================== نفس تنسيقاتك الأصلية مع دعم أوسع ==================== */
+
 .NavBarContiner {
   position: fixed;
   top: 0;
@@ -5,67 +7,104 @@
   width: 100%;
   padding: 10px 0 10px 0;
   box-shadow: var(--shadow-md);
-  background: var(--bg-secondary); /* تم التغيير: استخدام خلفية ثانوية أنظف */
+  background: var(--bg-secondary);
   transition: 0.5s;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
   z-index: 900;
-  border-bottom: 1px solid var(--border-color); /* إضافة حد سفلي رفيع */
+  border-bottom: 1px solid var(--border-color);
 }
 
 .NavBarContiner .BoxMainNavBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   height: 100%;
   margin: 0 20px 0 20px;
 }
 
 .BoxMainNavBar .IconNavBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  gap: 20px;
+  /* الحل الاحتياطي للمتصفحات التي لا تدعم gap */
+  margin-right: -20px; /* تعويض للحفاظ على التباعد */
+}
+.BoxMainNavBar .IconNavBar > * {
+  margin-right: 20px; /* بديل gap */
+}
+.BoxMainNavBar .IconNavBar > *:last-child {
+  margin-right: 0;
+}
+/* دعم gap مع الاحتفاظ بالتباعد نفسه */
+@supports (gap: 20px) {
+  .BoxMainNavBar .IconNavBar {
+    gap: 20px;
+    margin-right: 0;
+  }
+  .BoxMainNavBar .IconNavBar > * {
+    margin-right: 0;
+  }
 }
 
 .BoxMainNavBar .IconNavBar h2 {
   color: var(--text-primary);
-  font-weight: 700; /* زيادة سمك الخط لتحسين الظهور */
-  letter-spacing: -0.5px; /* تباعد أحرف أفضل */
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .BoxMainNavBar .IconNavBar .DarkMod {
   font-size: 22px;
   cursor: pointer;
   padding: 8px;
-  border: 1px solid var(--border-color); /* تم التغيير: استخدام لون الحدود */
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   color: var(--text-primary);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  transition: var(--transition); /* إضافة انتقال ناعم */
-  background: var(--bg-primary); /* إضافة خلفية خفيفة */
+  transition: var(--transition);
+  background: var(--bg-primary);
 }
 
 .BoxMainNavBar .IconNavBar .DarkMod:hover {
-  border-color: var(--text-primary); /* تأثير hover */
-  box-shadow: var(--shadow-sm); /* ظل خفيف عند hover */
+  border-color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
 }
 
 .BoxMainNavBar .SearchNavBar {
-  background: var(--bg-primary); /* تم التغيير: استخدام لون خلفية مناسب */
+  background: var(--bg-primary);
   width: 450px;
   padding: 10px 5px 10px 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 10px;
-  border: 1px solid var(--border-color); /* تم التفعيل: حدود مرئية */
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -79,8 +118,8 @@
 }
 
 .BoxMainNavBar .SearchNavBar:focus-within {
-  border-color: var(--text-primary); /* تمييز الحدود عند الكتابة */
-  box-shadow: var(--shadow-sm); /* ظل خفيف عند التركيز */
+  border-color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
 }
 
 .BoxMainNavBar .SearchNavBar input {
@@ -88,8 +127,8 @@
   padding: 2px 0;
   border: none;
   outline: none;
-  background: transparent; /* تم التغيير: خلفية شفافة لتأخذ لون الحاوية */
-  color: var(--text-primary); /* تم التغيير: استخدام لون النص الرئيسي */
+  background: transparent;
+  color: var(--text-primary);
   transition: var(--transition);
   -webkit-transition: var(--transition);
   -moz-transition: var(--transition);
@@ -98,23 +137,41 @@
 }
 
 .NavBarContiner .BoxMainNavBar .SearchNavBar input::placeholder {
-  color: var(--text-secondary); /* تم التغيير: لون placeholder أكثر وضوحاً */
+  color: var(--text-secondary);
 }
 
 .BoxMainNavBar .SearchNavBar .IconSearch {
-  color: var(--text-secondary); /* تم التغيير: لون أيقونة متناسق */
+  color: var(--text-secondary);
   font-size: 20px;
 }
 
 .BoxMainNavBar .TagNavBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  gap: 20px;
   position: relative;
+  /* بديل gap للمتصفحات القديمة */
+  margin-right: -20px;
+}
+.BoxMainNavBar .TagNavBar > a {
+  margin-right: 20px;
+}
+.BoxMainNavBar .TagNavBar > a:last-child {
+  margin-right: 0;
+}
+@supports (gap: 20px) {
+  .BoxMainNavBar .TagNavBar {
+    gap: 20px;
+    margin-right: 0;
+  }
+  .BoxMainNavBar .TagNavBar > a {
+    margin-right: 0;
+  }
 }
 
 .BoxMainNavBar .TagNavBar a {
   text-decoration: none;
-  color: var(--text-secondary); /* تم التغيير: الروابط غير النشطة بلون ثانوي */
+  color: var(--text-secondary);
   position: relative;
   padding: 5px 10px;
   transition: 0.5s;
@@ -122,56 +179,76 @@
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
-  font-weight: 500; /* وزن خط متوسط */
+  font-weight: 500;
 }
 
 .BoxMainNavBar .TagNavBar a::after {
   content: "";
   position: absolute;
   width: 100%;
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
   transform: scaleX(0);
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--text-primary); /* يبقى كما هو */
+  background-color: var(--text-primary);
+  -webkit-transform-origin: bottom right;
+  -ms-transform-origin: bottom right;
   transform-origin: bottom right;
+  transition: -webkit-transform 0.25s ease-out;
   transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
 }
 
 .BoxMainNavBar .TagNavBar a:hover {
-  color: var(--text-primary); /* تم التغيير: لون النص الأساسي عند hover */
+  color: var(--text-primary);
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
   transform: translateY(-2px);
 }
 
 .BoxMainNavBar .TagNavBar a:hover::after {
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
   transform: scaleX(1);
+  -webkit-transform-origin: bottom left;
+  -ms-transform-origin: bottom left;
   transform-origin: bottom left;
 }
 
 .BoxMainNavBar .IconTagList {
   display: none;
-  color: var(--text-primary); /* إضافة لون للأيقونة */
+  color: var(--text-primary);
 }
 
-/* Start TagList */
+/* ==================== القائمة الجانبية (tagsTow) ==================== */
 .tagsTow {
   position: fixed;
   top: 70px;
   left: 10px;
   width: 30%;
   height: 300px;
-  background: var(--bg-secondary); /* تم التغيير: خلفية مناسبة */
+  background: var(--bg-secondary);
   overflow: hidden;
   z-index: 1000;
   padding: 20px 0;
   border-radius: 8px;
-  box-shadow: var(--shadow-lg); /* إضافة ظل عميق */
-  border: 1px solid var(--border-color); /* إضافة حدود */
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
 }
 
 .divClosTags {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: start;
   margin: -10px 0 0 10px;
   padding: 0 0 10px 0;
@@ -180,69 +257,100 @@
 .Closeicon {
   font-size: 20px;
   cursor: pointer;
-  color: var(--text-secondary); /* تم التغيير: لون أيقونة متناسق */
+  color: var(--text-secondary);
   transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
 }
 
 .Closeicon:hover {
-  color: var(--text-primary); /* تأثير hover */
+  color: var(--text-primary);
 }
 
-/* أنميشن الفتح */
+/* أنيميشن الفتح والإغلاق مع دعم -webkit- */
 .animateShow {
-  animation: ShowTags 1s ease forwards;
   -webkit-animation: ShowTags 1s ease forwards;
+  animation: ShowTags 1s ease forwards;
 }
 
-/* أنميشن الإغلاق */
 .animateHide {
-  animation: HiddinTags 1s ease forwards;
   -webkit-animation: HiddinTags 1s ease forwards;
+  animation: HiddinTags 1s ease forwards;
+}
+
+@-webkit-keyframes ShowTags {
+  from {
+    -webkit-transform: translateX(-230px);
+    transform: translateX(-230px);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
 }
 
 @keyframes ShowTags {
   from {
-    transform: translateX(-230px);
     -webkit-transform: translateX(-230px);
-    -moz-transform: translateX(-230px);
-    -ms-transform: translateX(-230px);
-    -o-transform: translateX(-230px);
+    transform: translateX(-230px);
   }
   to {
-    transform: translateX(0px);
     -webkit-transform: translateX(0px);
-    -moz-transform: translateX(0px);
-    -ms-transform: translateX(0px);
-    -o-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+
+@-webkit-keyframes HiddinTags {
+  from {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(-380px);
+    transform: translateX(-380px);
   }
 }
 
 @keyframes HiddinTags {
   from {
-    transform: translateX(0px);
     -webkit-transform: translateX(0px);
-    -moz-transform: translateX(0px);
-    -ms-transform: translateX(0px);
-    -o-transform: translateX(0px);
+    transform: translateX(0px);
   }
   to {
-    transform: translateX(-380px);
     -webkit-transform: translateX(-380px);
-    -moz-transform: translateX(-380px);
-    -ms-transform: translateX(-380px);
-    -o-transform: translateX(-380px);
+    transform: translateX(-380px);
   }
 }
 
 .tagsTow .ListLinkTags {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
-  gap: 10px;
+  /* بديل gap للمتصفحات القديمة */
+  margin-top: -10px;
+}
+.tagsTow .ListLinkTags > a {
+  margin-top: 10px;
+}
+@supports (gap: 10px) {
+  .tagsTow .ListLinkTags {
+    gap: 10px;
+    margin-top: 0;
+  }
+  .tagsTow .ListLinkTags > a {
+    margin-top: 0;
+  }
 }
 
 .tagsTow .ListLinkTags a {
   text-decoration: none;
-  color: var(--text-secondary); /* تم التغيير: لون نص ثانوي */
+  color: var(--text-secondary);
   padding: 0 10px 5px 0;
   width: 100%;
   transition: 0.5s;
@@ -250,21 +358,23 @@
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
-  border-bottom: 1px solid var(--border-color); /* تم التغيير: استخدام لون الحدود */
+  border-bottom: 1px solid var(--border-color);
 }
 
 .tagsTow .ListLinkTags a:hover {
   padding: 0 15px 5px 0;
-  color: var(--text-primary); /* تم التغيير: لون النص الأساسي عند hover */
-  border-bottom-color: var(--text-primary); /* تمييز الحدود عند hover */
+  color: var(--text-primary);
+  border-bottom-color: var(--text-primary);
 }
-/* End TagList */
 
-/* Start media */
-
+/* ==================== Media Queries ==================== */
 @media (max-width: 1115px) {
   .BoxMainNavBar .IconTagList {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     font-size: 25px;
     color: var(--text-primary);
@@ -279,16 +389,13 @@
   .NavBarContiner {
     height: 40px;
   }
-
   .NavBarContiner .BoxMainNavBar .IconNavBar h2 {
     font-size: 18px;
   }
-
   .NavBarContiner .BoxMainNavBar .DarkMod {
     font-size: 15px;
     padding: 5px;
   }
-
   .NavBarContiner .BoxMainNavBar .SearchNavBar {
     width: 350px;
     padding: 5px 5px;
@@ -299,33 +406,18 @@
 }
 
 @media (max-width: 600px) {
-
-  .NavBarContiner {
-  position: fixed;
-  top: 0;
-  height: 50px;
-  width: 100%;
-  padding: 10px 0 10px 0;
-  box-shadow: var(--shadow-md);
-  background: var(--bg-secondary); /* تم التغيير: استخدام خلفية ثانوية أنظف */
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
-  z-index: 900;
-  border-bottom: 1px solid var(--border-color); /* إضافة حد سفلي رفيع */
-}
-
   .NavBarContiner .BoxMainNavBar {
     margin: 0 9px 0 9px;
   }
   .NavBarContiner .BoxMainNavBar .IconNavBar h2 {
-    /* background: red; */
     font-size: 15px;
   }
   .BoxMainNavBar .IconNavBar {
     gap: 3px;
+  }
+  /* تعديل المارجن الاحتياطي للشاشات الصغيرة */
+  .BoxMainNavBar .IconNavBar > * {
+    margin-right: 3px;
   }
   .NavBarContiner .BoxMainNavBar .SearchNavBar {
     width: 150px;
@@ -335,4 +427,3 @@
     width: 50%;
   }
 }
-/* end media */

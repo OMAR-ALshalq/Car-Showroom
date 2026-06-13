@@ -32,6 +32,7 @@
 }
 
 [data-theme="light"] {
+   color-scheme: light;
    /* ألوان الخلفيات - Light Mode */
   --bg-primary: #F8F9FA;
   --bg-secondary: #FFFFFF;
@@ -58,6 +59,7 @@
 }
 
 [data-theme="dark"] {
+   color-scheme: dark;
   /* ألوان الخلفيات - Dark Mode */
   --bg-primary: #121212;
   --bg-secondary: #1E1E1E;

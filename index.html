@@ -5,54 +5,97 @@
 
     <script>
       (function () {
-        // 1. تحديد السمة (يدوي > إعدادات الجهاز)
-        var theme = localStorage.getItem("site-theme");
-        if (!theme) {
-          theme = window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light";
+        // ---- الكشف عن forced dark mode ----
+        var testDiv = document.createElement("div");
+        testDiv.style.cssText =
+          "position:absolute;top:-999px;width:1px;height:1px;background:#ffffff;color:#ffffff;";
+        document.body.appendChild(testDiv);
+        var compStyle = getComputedStyle(testDiv);
+        var bgColor = compStyle.backgroundColor;
+        var textColor = compStyle.color;
+        document.body.removeChild(testDiv);
+
+        // دالة لتحويل rgb إلى hex للمقارنة
+        function rgbToHex(rgb) {
+          if (!rgb || rgb === "rgba(0, 0, 0, 0)") return "";
+          var nums = rgb.match(/\d+/g);
+          if (!nums || nums.length < 3) return "";
+          return (
+            "#" +
+            nums
+              .slice(0, 3)
+              .map(function (x) {
+                var hex = parseInt(x).toString(16);
+                return hex.length === 1 ? "0" + hex : hex;
+              })
+              .join("")
+          );
         }
+
+        var bgHex = rgbToHex(bgColor);
+        var textHex = rgbToHex(textColor);
+        var expectedWhite = "#ffffff";
+
+        // forced dark mode مفعّل إذا تغير لون الخلفية أو النص عن الأبيض بشكل كبير
+        var forcedDark =
+          bgHex.toLowerCase() !== expectedWhite ||
+          textHex.toLowerCase() !== expectedWhite;
+        // -----------------------------------
+
+        var theme = localStorage.getItem("site-theme");
+
+        if (forcedDark) {
+          // المتصفح يفرض وضعًا داكنًا، نلغي أي تفضيل فاتح ونستخدم الداكن فقط
+          theme = "dark";
+          // نمنع المستخدم من الحفظ اليدوي للفاتح عبر إزالة أي قيمة قديمة
+          localStorage.setItem("site-theme", "dark");
+          // نجعل الـ meta dark only
+          var meta = document.createElement("meta");
+          meta.name = "color-scheme";
+          meta.content = "dark only";
+          document.head.appendChild(meta);
+          // نخفي زر التبديل لاحقًا عبر CSS متغير (سنضيف class)
+          document.documentElement.classList.add("forced-dark-active");
+        } else {
+          // الحالة الطبيعية
+          if (!theme) {
+            theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          }
+          // إنشاء meta عادي
+          var meta = document.createElement("meta");
+          meta.name = "color-scheme";
+          meta.content = theme;
+          document.head.appendChild(meta);
+        }
+
         document.documentElement.setAttribute("data-theme", theme);
 
-        // 2. منع فلتر الألوان القسري من سامسونج (خاصية مهمة)
-        document.documentElement.style.setProperty(
-          "forced-color-adjust",
-          "none",
-          "important"
-        );
-
-        // 3. ضبط خلفية داكنة فوراً إن كانت السمة dark (تجنباً للوميض الأبيض)
+        // خلفية طارئة لمنع الوميض
         if (theme === "dark") {
           document.documentElement.style.setProperty(
             "background-color",
             "#121212",
             "important"
           );
+          document.documentElement.style.setProperty(
+            "color",
+            "#ffffff",
+            "important"
+          );
         }
 
-        // 4. إنشاء meta "color-scheme" ديناميكي بالقيمة الصحيحة (dark/light)
-        //    هذا يمنع المتصفح من تطبيق وضعه الداكن القسري لأنه سيرى "dark" في الميتا.
-        var meta = document.createElement("meta");
-        meta.name = "color-scheme";
-        meta.content = theme; // "dark" أو "light"
-        document.head.appendChild(meta);
-
-        // 5. استمع لتغييرات النظام (فقط في حال عدم وجود اختيار يدوي)
+        // استجابة لتغييرات النظام
         window
           .matchMedia("(prefers-color-scheme: dark)")
           .addEventListener("change", function (e) {
+            if (forcedDark) return; // لا نغير شيء في forced dark
             if (!localStorage.getItem("site-theme")) {
               var newTheme = e.matches ? "dark" : "light";
               document.documentElement.setAttribute("data-theme", newTheme);
-              // حدّث الميتا أيضاً
               var metaTag = document.querySelector('meta[name="color-scheme"]');
               if (metaTag) metaTag.content = newTheme;
-              // اضبط الخلفية
-              document.documentElement.style.setProperty(
-                "background-color",
-                newTheme === "dark" ? "#121212" : "",
-                "important"
-              );
             }
           });
       })();

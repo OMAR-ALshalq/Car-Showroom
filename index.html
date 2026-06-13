@@ -3,6 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <script>
+      // ✅ إصلاح لمتصفح Samsung Internet
+      (function () {
+        var theme = localStorage.getItem("site-theme");
+        if (theme) {
+          document.documentElement.setAttribute("data-theme", theme);
+        }
+      })();
+    </script>
+    <script>
       (function () {
         var saved = localStorage.getItem("site-theme");
 

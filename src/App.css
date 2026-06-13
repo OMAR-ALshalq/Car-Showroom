@@ -1,9 +1,5 @@
 /* ********************************************* */
 
-
-
-
-
 /* :root {
   --bg-primary: #F8F9FA;
   --bg-secondary: #FFFFFF;
@@ -27,64 +23,64 @@
 } */
 
 :root {
-    color-scheme: light dark;
-
+  color-scheme: light dark;
 }
 
 [data-theme="light"] {
-   color-scheme: light;
-   /* ألوان الخلفيات - Light Mode */
-  --bg-primary: #F8F9FA;
-  --bg-secondary: #FFFFFF;
-  --bg-tertiary: #E9ECEF;
-  
+  color-scheme: light;
+  /* ألوان الخلفيات - Light Mode */
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e9ecef;
+
   /* ألوان النصوص - Light Mode */
   --text-primary: #212529;
-  --text-secondary: #6C757D;
-  
+  --text-secondary: #6c757d;
+
   /* ألوان الحدود - Light Mode */
-  --border-color: #DEE2E6;
-  
+  --border-color: #dee2e6;
+
   /* ألوان الـ Box Shadow */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
-  
+
   /* ألوان التأكيد (Accent) - الأسود في الوضع الفاتح */
   --accent-color: #000000;
-  --accent-text: #FFFFFF;
-  
+  --accent-text: #ffffff;
+
   --transition: 0.3s ease;
-    --main-font: "Inter", "Cairo", sans-serif;
+  --main-font: "Inter", "Cairo", sans-serif;
 }
 
 [data-theme="dark"] {
-   color-scheme: dark;
+  color-scheme: dark;
   /* ألوان الخلفيات - Dark Mode */
   --bg-primary: #121212;
-  --bg-secondary: #1E1E1E;
-  --bg-tertiary: #2C2C2C;
-  
-  /* ألوان النصوص - Dark Mode */
-  --text-primary: #E9ECEF;
-  --text-secondary: #ADB5BD;
-  
-  /* ألوان الحدود - Dark Mode */
-  --border-color: #3A3A3A;
-  
-  /* ألوان الـ Box Shadow - Dark Mode */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
-  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
-  --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
-  
-  /* ألوان التأكيد (Accent) - الأبيض في الوضع الداكن */
-  --accent-color: #FFFFFF;
-  --accent-text: #000000;
-    --main-font: "Inter", "Cairo", sans-serif;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #2c2c2c;
 
+  /* ألوان النصوص - Dark Mode */
+  --text-primary: #e9ecef;
+  --text-secondary: #adb5bd;
+
+  /* ألوان الحدود - Dark Mode */
+  --border-color: #3a3a3a;
+
+  /* ألوان الـ Box Shadow - Dark Mode */
+  --shadow-sm:
+    0 1px 3px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  --shadow-md:
+    0 4px 8px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --shadow-lg:
+    0 8px 20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+  /* ألوان التأكيد (Accent) - الأبيض في الوضع الداكن */
+  --accent-color: #ffffff;
+  --accent-text: #000000;
+  --main-font: "Inter", "Cairo", sans-serif;
 }
 /* ********************************************* */
-
 
 body {
   background: var(--bg-primary);
@@ -157,5 +153,3 @@ p {
 html {
   color-scheme: light dark;
 }
-
-

@@ -14,17 +14,29 @@ import { GrClose } from "react-icons/gr";
 
 export default function NavBar() {
   // start DarkMod
-const [isDark, setIsDark] = useState(() => {
-  const savedTheme = localStorage.getItem("site-theme"); // ✅ localStorage
-  if (savedTheme) return savedTheme === "dark";
-  return window.matchMedia("(prefers-color-scheme: dark)").matches;
-});
+  const [isDark, setIsDark] = useState(() => {
+    const savedTheme = localStorage.getItem("site-theme");
+    if (savedTheme) return savedTheme === "dark";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
 
-useEffect(() => {
-  const theme = isDark ? "dark" : "light";
-  document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem("site-theme", theme); // ✅ localStorage
-}, [isDark]);
+  // تطبيق السمة على العنصر الجذر عند تغير isDark (ولكن بدون حفظ تلقائي)
+  useEffect(() => {
+    const theme = isDark ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [isDark]);
+
+  // استمع لتغييرات إعدادات الجهاز فقط إذا لم يختر المستخدم يدوياً
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = (e) => {
+      if (!localStorage.getItem("site-theme")) {
+        setIsDark(e.matches);
+      }
+    };
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
   // End DarkMod
 
   //Start inmationTag
@@ -52,13 +64,24 @@ useEffect(() => {
     setAnimation("hide");
   }
   //End ShowListTag
+
+  // دالة التبديل اليدوي (تحفظ اختيار المستخدم)
+  function toggleTheme() {
+    setIsDark((prev) => {
+      const newTheme = !prev;
+      const themeStr = newTheme ? "dark" : "light";
+      localStorage.setItem("site-theme", themeStr);
+      return newTheme;
+    });
+  }
+
   return (
     <div className="Box">
       <div className="continer NavBarContiner" dir="rtl">
         <div className="BoxMainNavBar">
           <div className="IconNavBar">
             <h2>CarShowRoom</h2>
-            <div className="DarkMod" onClick={() => setIsDark(!isDark)}>
+            <div className="DarkMod" onClick={toggleTheme}>
               {isDark ? (
                 <GoSun /> // تظهر أيقونة الشمس عندما يكون الوضع داكناً للعودة للفاتح
               ) : (
@@ -69,8 +92,6 @@ useEffect(() => {
           </div>
           <div>
             <SearchDropdown />
-            {/* <input type="text" placeholder="ابحث الان عن سيارتك" />
-            <GrSearch className="IconSearch" /> */}
           </div>
           <div className="IconTagList">
             <FaThList onClick={handeltags} />
